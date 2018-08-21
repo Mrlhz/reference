@@ -19,7 +19,7 @@ ul>li._item*3{$}
 - justify-content
 - align-items
 - align-content
-
+---
 - flex-direction属性
 > flex-direction属性决定主轴的方向（即项目的排列方向
 ```
