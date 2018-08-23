@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getting all query string values from a URL with vanilla JavaScript-December 11, 2017</title>
+</head>
+<body>
+<script>
+    /**
+     * Get the URL parameters
+     * source: https://css-tricks.com/snippets/javascript/get-url-variables/
+     * @param  {String} url The URL
+     * @return {Object}     The URL parameters
+     */
+    const getParams = function (url) {
+        let params = {};
+        let parser = document.createElement('a');
+        parser.href = url;
+        let query = parser.search.substring(1);
+        let vars = query.split('&');
+        for (let i = 0; i < vars.length; i++) {
+            let pair = vars[i].split('=');
+            params[pair[0]] = decodeURIComponent(pair[1]);
+        }
+        return params;
+    };
+    // Get parameters from the current URL
+    // getParams(window.location.href);
+
+    // Get parameters from a URL string
+    const url = 'https://gomakethings.com?sandwhich=chicken%20salad&bread=wheat';
+    console.log(getParams(url))
+</script>
+</body>
+</html>

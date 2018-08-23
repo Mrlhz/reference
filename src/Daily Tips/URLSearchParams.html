@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>URLSearchParams</title>
+</head>
+<body>
+<script>
+    function parse(str) {
+        if (typeof str !== 'string') {
+            return {};
+        }
+        return decodeURI(str).split('&').map(param => {
+            const tmp = param.split('=');
+            const key = tmp[0];
+            let value = tmp[1] || true;
+            if (typeof value === 'string' && isNaN(Number(value)) === false) {
+                value = Number(value);
+            }
+            return {key, value};
+        }).reduce((params, item) => {
+            const {key, value} = item;
+            if (typeof params[key] === 'undefined') {
+                params[key] = value;
+            } else {
+                params[key] = Array.isArray(params[key]) ? params[key] : [params[key]];
+                params[key].push(value);
+            }
+            return params;
+        }, {});
+    }
+
+    const getQueryString = function (field, url) {
+        let href = url ? url : window.location.href;
+        let reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+        let string = reg.exec(href);
+        return string ? string[1] : null;
+    };
+    console.log(parse('http://www.domain.com/?user=anonymous&id=123&id=456&city=北京&enabled'));
+    console.log('getQuerystring', getQueryString('http://www.domain.com/?user=anonymous&id=123&id=456&city=北京&enabled'));
+</script>
+<script>
+    const url0 = 'https://gomakethings.com?sandwhich=chicken%20salad&bread=wheat';
+    const url1 = 'http://www.domain.com/?user=anonymous&id=123&id=456&city=北京&enabled';
+
+    let params = new URLSearchParams(url1);
+    console.log(params);
+    for (let p of params) {
+        console.log(p);
+    }
+</script>
+</body>
+</html>
