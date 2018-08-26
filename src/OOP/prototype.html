@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <style>
+        .visible {
+            display: block
+        }
+    </style>
+</head>
+<body>
+<div id="ele" class="ele visible">hello</div>
+<script>
+    function Elem(id) {
+        this.elem = document.getElementById(id)
+    }
+
+    Elem.prototype.html = function (val) {
+        let elem = this.elem;
+        if (val) {
+            elem.innerHTML = val;
+            return this;//链式操作
+        } else {
+            return elem.innerHTML
+        }
+    };
+
+    Elem.prototype.on = function (type, fn) {
+        let elem = this.elem;
+        elem.addEventListener(type, fn);//用于向指定元素添加时间句柄
+        return this;
+    };
+    //把对应id写在这里
+    // let div1 = new Elem('ele');
+    // // console.log(div1.html())
+    //
+    // div1.html('<p>hello World</p>').on('click', function () {//链式操作
+    //     alert('clicked')
+    // }).html('<p>javascript</P>')
+</script>
+<script>
+    class Query {
+        constructor(id) {
+            this.elem = document.getElementById(id);
+        }
+
+        html(val) {
+            if (val) {
+                this.elem.innerHTML = val;
+                return this;
+            } else {
+                return this.elem.innerHTML;//不输入内容则默认获取html
+            }
+        }
+
+        on(type, fn) {
+            this.elem.addEventListener(type, fn);
+            return this;
+        }
+
+        // 添加指定的类值。如果这些类已经存在于元素的属性中，那么它们将被忽略
+        add(cls) {
+            const el = this.elem;
+            if (el.classList) {
+                el.classList.add(cls);
+            } else {
+                el.className += ' ' + cls;
+            }
+        }
+
+        // 删除指定的类值 IE8+
+        remove(cls) {
+            const el = this.elem;
+            if (el.classList){
+                el.classList.remove(cls);
+            }
+            else {
+                el.className = el.className.replace(new RegExp('(^|\\b)' + cls.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+            }
+            return this;
+        }
+
+        // 按集合中的索引返回类值
+        item(number) {console.log(this.elem.classList.item(number)) }
+
+        // 当只有一个参数时：切换 class value; 即如果类存在，则删除它并返回false，如果不存在，则添加它并返回true
+        toggle(cls) {
+            console.log(this.elem.classList.toggle(cls))
+        }
+
+        // 检查元素的类属性中是否存在指定的类值
+        contains(...cls) {console.log(this.elem.classList.contains(cls))}
+
+        hide() {
+            this.elem.style.display = 'none';
+        }
+    }
+
+    let q = new Query('ele');
+    const s = q.remove('ele').item(0);
+
+    const cls = ["foo", "bar", "ele"];
+    let contains = q.contains(...cls)
+</script>
+</body>
+</html>

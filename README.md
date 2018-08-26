@@ -1,6 +1,7 @@
 # web
 学习笔记
 
+[Daily Developer Tips](https://gomakethings.com/articles/)
 emmet
 ```
 ul>li._item*3{$}

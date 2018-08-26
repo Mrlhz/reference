@@ -4,8 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Getting all query string values from a URL with vanilla JavaScript-December 11, 2017</title>
+    <style>
+        body {
+            font-family: PT Serif, serif;
+            font-size: 16px;
+        }
+
+        a {
+            color: #08c;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 38em;
+            width: 88%;
+        }
+
+        .text-muted {
+            color: gray;
+            font-size: 18px;
+        }
+
+        .no-padding-top {
+            font-size: 32px;
+            font-weight: 700;
+            color: rgb(39, 39, 39);
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <header>
+        <aside class="text-muted">
+            <time datetime="2017-12-11 00:00:00 +0000 UTC">December 11, 2017</time>
+        </aside>
+        <h1 class="no-padding-top">Getting all query string values from a URL with vanilla JavaScript</h1>
+        <p><a href="https://gomakethings.com/getting-all-query-string-values-from-a-url-with-vanilla-js/">tips</a></p>
+        <p><a href="https://gomakethings.com/whats-the-best-way-to-document-javascript/">What's the best way to document
+            JavaScript?</a></p>
+    </header>
+</div>
 <script>
     /**
      * Get the URL parameters
@@ -16,11 +57,13 @@
     const getParams = function (url) {
         let params = {};
         let parser = document.createElement('a');
+        console.log(params);
         parser.href = url;
         let query = parser.search.substring(1);
         let vars = query.split('&');
         for (let i = 0; i < vars.length; i++) {
             let pair = vars[i].split('=');
+            console.log(decodeURIComponent(pair));
             params[pair[0]] = decodeURIComponent(pair[1]);
         }
         return params;
@@ -29,7 +72,7 @@
     // getParams(window.location.href);
 
     // Get parameters from a URL string
-    const url = 'https://gomakethings.com?sandwhich=chicken%20salad&bread=wheat';
+    const url = 'https://gomakethings.com?sandwhich=chicken%20salad&bread=wheat&advice=学习';
     console.log(getParams(url))
 </script>
 </body>

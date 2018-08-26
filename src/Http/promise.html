@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>一个用Promise对象实现的 Ajax 操作的例子</title>
+</head>
+<body>
+<script>
+    // const getJSON = function (url) {
+    //     const promise = new Promise(function (resolve, reject) {
+    //         const handler = function () {
+    //             if (this.readyState !== 4) {
+    //                 return;
+    //             }
+    //             if (this.status === 200) {
+    //                 resolve(this.response);
+    //             } else {
+    //                 reject(new Error(this.statusText));
+    //             }
+    //         };
+    //         const client = new XMLHttpRequest();
+    //         client.open("GET", url);
+    //         client.onreadystatechange = handler;
+    //         client.responseType = "json";
+    //         client.setRequestHeader("Accept", "application/json");
+    //         client.send();
+    //
+    //     });
+    //
+    //     return promise;
+    // };
+    // getJSON("data.json").then(function (json) {
+    //     console.log('Contents: ', json);
+    // }, function (error) {
+    //     console.error('出错了', error);
+    // });
+
+</script>
+<script>
+    function fetch(url) {
+        const promise = new Promise(function (resolve, reject) {
+            const handler = function () {
+                if (this.readyState !== 4) {
+                    return;
+                }
+                if (this.status === 200 || this.status === 304) {
+                    resolve(this.response);
+                } else {
+                    reject(new Error(this.statusText))
+                }
+            };
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.onreadystatechange = handler;
+            xhr.responseType = "json";
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.send();
+        });
+        return promise;
+    }
+
+    fetch("data.json").then(function (json) {
+        console.log('Contents: ', json);
+    }, function (error) {
+        console.error('出错了', error);
+    });
+
+    function unique(arr) {
+        let result = [];
+        for (let i = 0, len = arr.length; i < len; i++) {
+            if (result.indexOf(arr[i]) === -1) {
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    }
+
+    unique([1, 1, 2, 2, 3, 3]);
+</script>
+</body>
+</html>
