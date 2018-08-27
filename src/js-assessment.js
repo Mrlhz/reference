@@ -1,3 +1,5 @@
+// https://github.com/rmurphey/js-assessment
+// Ctrl + Shift + - 折叠所有代码
 // 找出元素 item 在给定数组 arr 中的位置
 function indexOf(arr, item) {
     if (Array.prototype.indexOf) {
@@ -436,17 +438,146 @@ function indexOf(arr, item) {
 }
 
 // 找出数组 arr 中重复出现过的元素
+//TODO 找出数组 arr 中重复出现过的元素
 {
     function duplicates(arr) {
-        var tem = [].concat(arr);
-        var result = [];
-        for (var i = 0; i < arr.length; i++) {
-            if (result.indexOf(tem[i]) === -1) {
-                result.push(tem[i]);
+        let result = [];
+        arr.forEach(function (elem) {
+            if (arr.indexOf(elem) !== arr.lastIndexOf(elem) && result.indexOf(elem) === -1) {
+                console.log(arr.indexOf(elem), arr.lastIndexOf(elem));
+                result.push(elem);
+            }
+        });
+        return result;
+    }
+
+    duplicates([1, 2, 4, 4, 3, 3, 1, 5, 3]);
+
+    function duplicates1(arr) {
+        let seen = {};
+        let dupes = [];///
+
+        for (let i = 0, len = arr.length; i < len; i++) {
+            seen[arr[i]] = seen[arr[i]] ? seen[arr[i]] + 1 : 1;
+        }
+        for (let item in seen) {
+            if (seen.hasOwnProperty(item) && seen[item] > 1) {
+                dupes.push(item);
+            }
+        }
+
+        return dupes;
+    }
+
+    function duplicates2(arr) {
+        //声明两个数组，a数组用来存放结果，b数组用来存放arr中每个元素的个数
+        let a = [], b = [];
+        //遍历arr，如果以arr中元素为下标的的b元素已存在，则该b元素加1，否则设置为1
+        for (let i = 0; i < arr.length; i++) {
+            if (!b[arr[i]]) {
+                b[arr[i]] = 1;
+                continue;
+            }
+            b[arr[i]]++;
+        }
+        //遍历b数组，将其中元素值大于1的元素下标存入a数组中
+        for (let i = 0; i < b.length; i++) {
+            if (b[i] > 1) {
+                a.push(i);
+            }
+        }
+        return a;
+    }
+
+    function duplicates3(arr) {
+        let a = arr.sort(), b = [];
+        for (let i in a) {
+            if (a[i] === a[i - 1] && b.indexOf(a[i]) === -1) b.push(a[i]);
+        }
+        return b;
+    }//先排序，如果后一个与前一个相等且未保存，则保存。
+}
+
+// 为数组 arr 中的每个元素求二次方。不要直接修改数组 arr，结果返回新的数组
+{
+    function square(arr) {
+        return arr.map(function (v) {
+            return v * v;
+        })
+    }
+
+    const square1 = arr => arr.map(v => v * v);
+}
+
+// 在数组 arr 中，查找值与 item 相等的元素出现的所有位置
+{
+    function findAllOccurrences(arr, target) {
+        let result = [];
+        [].concat(arr).map((value, index) => {
+            if (value === target) {
+                result.push(index)
+            }
+        });
+        return result;
+    }
+
+    function findAllOccurrences1(arr, target) {
+        let result = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === target) {
+                result.push(i);
             }
         }
         return result;
     }
 
-    duplicates([1, 2, 4, 4, 3, 3, 1, 5, 3])
+    function findAllOccurrences2(arr, target) {
+        let temp = [];
+        arr.forEach(function (val, index) {
+            val !== target || temp.push(index);
+        });
+        return temp;
+    }
+
+//filter
+    function findAllOccurrences3(arr, target) {
+        var result = [];
+        arr.filter(function (item, index) {
+            return item === target && result.push(index);
+        });
+        return result;
+    }
+
+//for
+    function findAllOccurrences4(arr, target) {
+        var result = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] === target) {
+                result.push(i);
+            }
+        }
+        return result;
+    }
+
+//lastIndexOf+slice/splice
+    function findAllOccurrences5(arr, target) {
+        var result = [], index = arr.lastIndexOf(target);
+        while (index > -1) {
+            result.push(index);
+            arr.splice(index, 1);//arr=arr.slice(0,index);
+            index = arr.lastIndexOf(target);
+        }
+        return result;
+    }
+
+//indexOf
+    function findAllOccurrences6(arr, target) {
+        var result = [], index = arr.indexOf(target);
+        while (index > -1) {
+            result.push(index);
+            index = arr.indexOf(target, index + 1);
+        }
+        return result;
+    }
 }
+
