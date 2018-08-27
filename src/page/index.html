@@ -62,17 +62,6 @@
     });
 </script>
 <script>
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", 'http://api.douban.com/v2/movie/top250');
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            console.log("success", xhr.responseText);
-        }
-        console.log("fail");
-    };
-    // xhr.send(null);
-</script>
-<script>
     function parse(str) {
         if (typeof str !== 'string') {
             return {};
