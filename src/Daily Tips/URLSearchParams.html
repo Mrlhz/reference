@@ -1,54 +1,210 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>URLSearchParams</title>
-</head>
-<body>
-<script>
-    function parse(str) {
-        if (typeof str !== 'string') {
-            return {};
+    <style>
+        html {
+            font-size: 16px;
         }
-        return decodeURI(str).split('&').map(param => {
-            const tmp = param.split('=');
-            const key = tmp[0];
-            let value = tmp[1] || true;
-            if (typeof value === 'string' && isNaN(Number(value)) === false) {
-                value = Number(value);
-            }
-            return {key, value};
-        }).reduce((params, item) => {
-            const {key, value} = item;
-            if (typeof params[key] === 'undefined') {
-                params[key] = value;
-            } else {
-                params[key] = Array.isArray(params[key]) ? params[key] : [params[key]];
-                params[key].push(value);
-            }
-            return params;
-        }, {});
-    }
 
-    const getQueryString = function (field, url) {
-        let href = url ? url : window.location.href;
-        let reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
-        let string = reg.exec(href);
-        return string ? string[1] : null;
-    };
-    console.log(parse('http://www.domain.com/?user=anonymous&id=123&id=456&city=北京&enabled'));
-    console.log('getQuerystring', getQueryString('http://www.domain.com/?user=anonymous&id=123&id=456&city=北京&enabled'));
-</script>
-<script>
-    const url0 = 'https://gomakethings.com?sandwhich=chicken%20salad&bread=wheat';
-    const url1 = 'http://www.domain.com/?user=anonymous&id=123&id=456&city=北京&enabled';
+        dl {
+            box-sizing: border-box;
+            max-width: 42rem;
+            font-style: normal;
+            font-weight: 700;
+        }
 
-    let params = new URLSearchParams(url1);
-    console.log(params);
-    for (let p of params) {
-        console.log(p);
-    }
-</script>
+        dt {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        dl dt a code {
+            background-color: rgba(220, 220, 220, .5);
+            color: #3f87a6;
+            font-family: consolas, "Liberation Mono", courier, monospace;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration:#3f87a6;
+        }
+    </style>
+</head>
+
+<body>
+    <dl>
+        <dt>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/append" title="The append() method of the URLSearchParams interface appends&nbsp;a specified key/value pair as a new search parameter.">
+                <code>URLSearchParams.append()</code>
+            </a>
+        </dt>
+        <dd>Appends a specified key/value pair as a new search parameter.</dd>
+        <dt>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/delete" title="The delete() method of the URLSearchParams interface deletes the given search parameter&nbsp;and its associated value, from the list of all search parameters.">
+                <code>URLSearchParams.delete()</code>
+            </a>
+        </dt>
+        <dd>Deletes the given search parameter, and its associated value, from the list of all search parameters.</dd>
+        <dt>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/entries" title="The URLSearchParams.entries() method returns an iterator allowing to go through all key/value pairs contained in this object. The key and value of each pair are USVString objects.">
+                <code>URLSearchParams.entries()</code>
+            </a>
+        </dt>
+        <dd>Returns an
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols" title="A couple of additions to ECMAScript 2015 aren't new built-ins or syntax, but protocols. These protocols can be implemented by any object respecting some conventions.">
+                <code>iterator</code>
+            </a> allowing to go through all key/value pairs contained in this object.</dd>
+        <dt>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/get" title="The get() method of the URLSearchParams interface returns the first value associated to the given search parameter.">
+                <code>URLSearchParams.get()</code>
+            </a>
+        </dt>
+        <dd>Returns the first value associated to the given search parameter.</dd>
+        <dt>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/getAll" title="The getAll() method of the URLSearchParams interface returns all the values associated&nbsp;with a given search parameter as an array.">
+                <code>URLSearchParams.getAll()</code>
+            </a>
+        </dt>
+        <dd>Returns all the values associated&nbsp;with a given search parameter.</dd>
+        <dt>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/has" title="The has() method of the URLSearchParams interface returns a Boolean that indicates whether a parameter with the specified name exists.">
+                <code>URLSearchParams.has()</code>
+            </a>
+        </dt>
+        <dd>Returns a
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" title="The Boolean object is an object wrapper for a boolean value.">
+                <code>Boolean</code>
+            </a> indicating if such a search parameter exists.</dd>
+        <dt>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/keys" title="The URLSearchParams.keys() method returns an iterator allowing to go through all keys contained in this object. The keys are USVString objects.">
+                <code>URLSearchParams.keys()</code>
+            </a>
+        </dt>
+        <dd>Returns an
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols" title="A couple of additions to ECMAScript 2015 aren't new built-ins or syntax, but protocols. These protocols can be implemented by any object respecting some conventions.">
+                <code>iterator</code>
+            </a> allowing to go through all
+            <strong>keys </strong>of the key/value pairs contained in this object.</dd>
+        <dt>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/set" title="The set() method of the URLSearchParams interface sets the value associated with a given search parameter to the given value. If there were several matching values, this method deletes the others. If the search parameter doesn't exist, this method creates it.">
+                <code>URLSearchParams.set()</code>
+            </a>
+        </dt>
+        <dd>Sets the value associated to a given search parameter to the given value. If there were several values, delete the
+            others.
+        </dd>
+        <dt>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/sort" title="The URLSearchParams.sort() method sort all key/value pairs contained in this object in place and return undefined. The sort order is according to Unicode code points of the keys. This method uses a stable sorting algorithm (i.e. the relative order between key/value pairs with equal keys will be preserved).">
+                <code>URLSearchParams.sort()</code>
+            </a>
+        </dt>
+        <dd>Sorts all key/value pairs, if any, by their keys.</dd>
+        <dt>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/toString" title="The toString() method of the URLSearchParams interface returns a&nbsp;query string suitable for use in a URL.">
+                <code>URLSearchParams.toString()</code>
+            </a>
+        </dt>
+        <dd>Returns a string containing a query string suitable for use in a URL.</dd>
+        <dt>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/values" title="The URLSearchParams.values() method returns an iterator allowing to go through all values contained in this object. The values are USVString objects.">
+                <code>URLSearchParams.values()</code>
+            </a>
+        </dt>
+        <dd>Returns an
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols" title="A couple of additions to ECMAScript 2015 aren't new built-ins or syntax, but protocols. These protocols can be implemented by any object respecting some conventions.">
+                <code>iterator</code>
+            </a> allowing to go through all
+            <strong>values </strong>of the key/value pairs contained in this object.</dd>
+    </dl>
+    <script>
+        function parse1(str) {
+            if (typeof str !== 'string') {
+                return {};
+            }
+            var paramObj = {};
+            var paramArr = decodeURI(str).split('&');
+            for (var i = 0; i < paramArr.length; i++) {
+                var tmp = paramArr[i].split('=');
+                var key = tmp[0];
+                var value = tmp[1] || true;
+                if (typeof value === 'string' && isNaN(Number(value)) === false) {
+                    value = Number(value);
+                }
+                if (typeof paramObj[key] === 'undefined') {
+                    paramObj[key] = value;
+                } else {
+                    var newValue = Array.isArray(paramObj[key]) ? paramObj[key] : [paramObj[key]];
+                    newValue.push(value);
+                    paramObj[key] = newValue;
+                }
+            }
+            return paramObj;
+        }
+    </script>
+    <script>
+        // ES6
+        function parse(str) {
+            if (typeof str !== 'string') {
+                return {};
+            }
+            return decodeURI(str).split('&').map(param => {
+                const tmp = param.split('=');
+                const key = tmp[0];
+                let value = tmp[1] || true;
+                if (typeof value === 'string' && isNaN(Number(value)) === false) {
+                    value = Number(value);
+                }
+                return {
+                    key,
+                    value
+                };
+            }).reduce((params, item) => {
+                const {
+                    key,
+                    value
+                } = item;
+                if (typeof params[key] === 'undefined') {
+                    params[key] = value;
+                } else {
+                    params[key] = Array.isArray(params[key]) ? params[key] : [params[key]];
+                    params[key].push(value);
+                }
+                return params;
+            }, {});
+        }
+
+        const getQueryString = function (field, url) {
+            let href = url ? url : window.location.href;
+            let reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+            let string = reg.exec(href);
+            return string ? string[1] : null;
+        };
+        console.log(parse('http://www.domain.com/?user=anonymous&id=123&id=456&city=北京&enabled'));
+        console.log('getQuerystring', getQueryString(
+            'http://www.domain.com/?user=anonymous&id=123&id=456&city=北京&enabled'));
+    </script>
+    <script>
+        const url0 = 'https://gomakethings.com?sandwhich=chicken%20salad&bread=wheat';
+        const url1 = 'http://www.domain.com/?user=anonymous&id=123&id=456&city=北京&enabled';
+
+        let params = new URLSearchParams(url1);
+        console.log(params.get('city'));
+        for (let p of params) {
+            console.log(p);
+        }
+
+        for (let pair of params.entries()) {
+            console.log(pair[0] + ', ' + pair[1]);
+        }
+    </script>
 </body>
+
 </html>
