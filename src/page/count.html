@@ -1,11 +1,114 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>$Title$</title>
+    <title>打点计时器</title>
+    <style>
+        .subject-describe {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #5a676f;
+        }
+    </style>
 </head>
+
 <body>
-$END$
+    <div class="subject-describe">
+        <div style="margin-bottom:10px;">实现一个打点计时器，要求
+            <br> 1、从 start 到 end（包含 start 和 end），每隔 100 毫秒 console.log 一个数字，每次数字增幅为 1
+            <br> 2、返回的对象中需要包含一个 cancel 方法，用于停止定时操作
+            <br> 3、第一个数需要立即输出
+        </div>
+        <!--  -->
+        <div class="container"git>
+            <ul>
+                <li>
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+            </ul>
+        </div>
+        <style>
+            ul,
+            li {
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
+            }
+
+            .container a {
+                text-decoration: none;
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                font-size: 24px;
+            }
+
+            .color{
+                background-color: aquamarine;
+            }
+
+            a:hover{
+                text-decoration: aliceblue;
+            }
+        </style>
+        <script>
+        let c = document.querySelectorAll('.container a');
+        for (let index = 0; index < c.length; index++) {
+            const element = c[index];
+            element.addEventListener('click', () => element.classList.toggle('color'))
+        }
+        </script>
+    </div>
+    <script>
+        function count(start, end) {
+            console.log(start++);
+            var cancel = setInterval(function () {
+                if (start <= end) {
+                    console.log(start++)
+                } else {
+                    clearInterval(cancel);
+                }
+            }, 100);
+            return {
+                cancel: function () {
+                    clearInterval(cancel);
+                }
+            }
+        }
+
+        function count1(start, end) {
+            if (start <= end) {
+                console.log(start);
+                start++;
+                st = setTimeout(function () {
+                    count(start, end)
+                }, 100);
+            }
+            return {
+                cancel: function () {
+                    clearTimeout(st);
+                }
+            }
+        }
+    </script>
 </body>
+
 </html>
