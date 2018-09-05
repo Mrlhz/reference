@@ -27,6 +27,7 @@
 ## 样式框架
 - [pure](https://purecss.io/) [purecss.cn](https://www.purecss.cn/)
 - [Bootstrap](http://www.bootcss.com/)
+- [Foundation](https://foundation.zurb.com/) [模板](https://foundation.zurb.com/templates.html)
 - [Semantic UI](https://semantic-ui.com/) [cn](http://www.semantic-ui.cn/)
 - [Amaze UI](https://github.com/amazeui/amazeui)
 - [layui](https://www.layui.com/)
