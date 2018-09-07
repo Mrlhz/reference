@@ -37,4 +37,10 @@
 ### vscode
 - [quokka](https://quokkajs.com/docs/)
 
+## [Echarts](https://github.com/apache/incubator-echarts)
+[echarts](http://echarts.baidu.com/)
+
+## Animate.css
+[Animate.css](https://daneden.github.io/animate.css/)
+
 https://www.cnblogs.com/liugang-vip/p/6617988.html
