@@ -43,4 +43,23 @@
 ## Animate.css
 [Animate.css](https://daneden.github.io/animate.css/)
 
+## viewport
+[viewportsizes](http://viewportsizes.com/?filter=iphone)
+
+## 正则表达式
+[JavaScript RegExp 对象](http://www.runoob.com/jsref/jsref-obj-regexp.html)
+
+[正则表达式在线测试](https://c.runoob.com/front-end/854)
+
+## hexo主题
+[Yilia](https://github.com/litten/hexo-theme-yilia)
+
+[CleanBlog](https://github.com/klugjo/hexo-theme-clean-blog)
+
+[Even](http://www.ahonn.me/)
+
+[element组件库分析系列--Data类](http://www.yzz1995.cn/2017/05/14/element组件库分析系列-Data类)
+
+[light](https://hexojs.github.io/hexo-theme-light/)
+
 https://www.cnblogs.com/liugang-vip/p/6617988.html
