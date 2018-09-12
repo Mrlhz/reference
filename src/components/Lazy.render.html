@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图片预加载和懒加载</title>
+  <style>
+    .img {
+      min-height: 400px;
+    }
+
+    .box{
+      height: 2000px;
+      width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    let imageEle = (function () {
+      let node = document.createElement('img');
+      document.body.appendChild(node);
+      return {
+        setSrc: function (src) {
+          node.src = src;
+        }
+      }
+    })();
+
+    //代理对象
+    let proxy = (function () {
+      let img = new Image();
+      img.onload = function () {
+        imageEle.setSrc(this.src);
+      };
+      return {
+        setSrc: function (src) {
+          img.src = src;
+          imageEle.setSrc('loading.gif');
+        }
+      }
+    })();
+
+    proxy.setSrc('example.jpeg');
+
+    let imgs = document.getElementsByTagName("img");
+    let n = 0; //存储加载图片索引
+    let lazyload = () => {
+      let cHeight = document.documentElement.clientHeight;
+      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop; //滚动条距离顶部高度
+      for (let i = n, l = imgs.length; i < l; i++) {
+        let img = imgs[i];
+        if (img.offsetTop < cHeight + scrollTop) {
+          img.src = img.src == 'loading.gif' ? img.getAttribute('data-src') : img.src;
+          n = i + 1;
+        }
+      }
+    }
+    window.onscroll = lazyload;
+  </script>
+</body>
+
+</html>

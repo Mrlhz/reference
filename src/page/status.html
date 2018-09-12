@@ -256,6 +256,9 @@
     var content = [];
     for (let i = 0; i < a.length; i++) {
       title.push(a[i].getAttribute('title'));
+      var span = document.createElement('span');
+      span.innerHTML = a[i].getAttribute('title');
+      code[i].appendChild(span);
     }
     for (let i = 0; i < code.length; i++) {
       content.push(code[i].innerHTML);

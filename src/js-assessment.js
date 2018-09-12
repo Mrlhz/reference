@@ -1,6 +1,6 @@
 // https://github.com/rmurphey/js-assessment
 // Ctrl + Shift + - 折叠所有代码
-// 找出元素 item 在给定数组 arr 中的位置
+// 1.找出元素 item 在给定数组 arr 中的位置
 function indexOf(arr, item) {
     if (Array.prototype.indexOf) {
         return arr.indexOf(item);
@@ -14,7 +14,7 @@ function indexOf(arr, item) {
     return -1;
 }
 
-// 计算给定数组 arr 中所有元素的总和
+// 2.计算给定数组 arr 中所有元素的总和
 {
     // 函数式编程 map-reduce：
     function sum(arr) {
