@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTTP 响应代码</title>
+</head>
+
+<body>
+  <ol class="toggle-container" aria-expanded="true" style="display: block;">
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/100" title="HTTP 100 Continue&nbsp;信息型状态响应码表示目前为止一切正常, 客户端应该继续请求, 如果已完成请求则忽略.">
+        <code>100 Continue</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/101" title="HTTP &nbsp;101 Switching Protocol（协议切换）状态码表示服务器应客户端升级协议的请求（Upgrade请求头）正在进行协议切换。">
+        <code>101 Switching Protocol</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/200" title="状态码&nbsp;200 OK&nbsp;表明请求已经成功. 默认情况下状态码为200的响应可以被缓存。">
+        <code>200 OK</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/201" title="在HTTP协议中，201 Created 是一个代表成功的应答状态码，表示请求已经被成功处理，并且创建了新的资源。新的资源在应答返回之前已经被创建。同时新增的资源会在应答消息体中返回，其地址或者是原始请求的路径，或者是 Location 首部的值。">
+        <code>201 Created</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/202" title="响应状态码 202 Accepted 表示服务器端已经收到请求消息，但是尚未进行处理。但是对于请求的处理确实无保证的，即稍后无法通过 HTTP 协议给客户端发送一个异步请求来告知其请求的处理结果。这个状态码被设计用来将请求交由另外一个进程或者服务器来进行处理，或者是对请求进行批处理的情形。">
+        <code>202 Accepted</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/203" title="在 HTTP 协议中，响应状态码&nbsp;203 Non-Authoritative Information &nbsp;表示请求已经成功被响应，但是获得的负载与源头服务器的状态码为 200 (OK)的响应相比，经过了拥有转换功能的 proxy （代理服务器）的修改。">
+        <code>203 Non-Authoritative Information</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/204" title="HTTP协议中&nbsp;204&nbsp;No Content&nbsp;成功状态响应码表示目前请求成功，但客户端不需要更新其现有页面。204 响应默认是可以被缓存的。在响应中需要包含头信息 ETag。">
+        <code>204 No Content</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/205" title="在 HTTP 协议中，响应状态码&nbsp;205 Reset Content 用来通知客户端重置文档视图，比如清空表单内容、重置 canvas 状态或者刷新用户界面。">
+        <code>205 Reset Content</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/206" title="HTTP 206 Partial Content 成功状态响应代码表示请求已成功，并且主体包含所请求的数据区间，该数据区间是在请求的 Range 首部指定的。">
+        <code>206 Partial Content</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/300" title="300 Multiple Choices 是一个用来表示重定向的响应状态码，表示该请求拥有多种可能的响应。用户代理或者用户自身应该从中选择一个。由于没有如何进行选择的标准方法，这个状态码极少使用。">
+        <code>300 Multiple Choices</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/301" title="HTTP 301 永久重定向&nbsp;说明请求的资源已经被移动到了由&nbsp;Location 头部指定的url上，是固定的不会再改变。搜索引擎会根据该响应修正。">
+        <code>301 Moved Permanently</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/302" title="HTTP 302 Found 重定向状态码表明请求的资源被暂时的移动到了由Location 头部指定的 URL 上。浏览器会重定向到这个URL，&nbsp;但是搜索引擎不会对该资源的链接进行更新&nbsp;(In SEO-speak, it is said that the link-juice is not sent to the new URL)。">
+        <code>302 Found</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/303" title="HTTP 303 See Other 重定向状态码，通常作为 PUT 或 POST 操作的返回结果，它表示重定向链接指向的不是新上传的资源，而是另外一个页面，比如消息确认页面或上传进度页面。而请求重定向页面的方法要总是使用&nbsp;GET。">
+        <code>303 See Other</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/304" title="HTTP 304&nbsp;未改变说明无需再次传输请求的内容，也就是说可以使用缓存的内容。这通常是在一些安全的方法（safe），例如GET 或HEAD 或在请求中附带了头部信息：&nbsp;If-None-Match 或If-Modified-Since。">
+        <code>304 Not Modified</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/307" title="原始请求中的请求方法和消息主体会在重定向请求中被重用。在确实需要将重定向请求的方法转换为 &nbsp;GET 的场景下，可以考虑使用 303 See Also 状态码。例如在使用 PUT 方法进行文件上传操作时，需要返回确认信息（例如“你已经成功上传了xyz”）而不是上传的资源本身，就可以使用这个状态码。">
+        <code>307 Temporary Redirect</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/308" title="在重定向过程中，请求方法和消息主体不会发生改变，然而在返回 301&nbsp;状态码的情况下，请求方法有时候会被客户端错误地修改为 GET 方法。">
+        <code>308 Permanent Redirect</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/400" title="HTTP 400 Bad Request 响应状态码表示由于语法无效，服务器无法理解该请求。 客户端不应该在未经修改的情况下重复此请求。">
+        <code>400 Bad Request</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/401" title="状态码&nbsp;401 Unauthorized 代表客户端错误，指的是由于缺乏目标资源要求的身份验证凭证，发送的请求未得到满足。">
+        <code>401 Unauthorized</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/403" title="状态码&nbsp;403 Forbidden 代表客户端错误，指的是服务器端有能力处理该请求，但是拒绝授权访问。">
+        <code>403 Forbidden</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/404" title="状态码&nbsp;404 Not Found 代表客户端错误，指的是服务器端无法找到所请求的资源。返回该响应的链接通常称为坏链（broken link）或死链（dead link），它们会导向链接出错处理(link rot)页面。">
+        <code>404 Not Found</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/405" title="状态码&nbsp;405 Method Not Allowed&nbsp;表明服务器禁止了使用当前 HTTP 方法的请求。需要注意的是，GET 与 HEAD 两个方法不得被禁止，当然也不得返回状态码 405。">
+        <code>405 Method Not Allowed</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/406" title="HTTP 协议中的 406 Not Acceptable 状态码表示客户端错误，指代服务器端无法提供与&nbsp; Accept-Charset 以及 Accept-Language 消息头指定的值相匹配的响应。">
+        <code>406 Not Acceptable</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/407" title="状态码&nbsp;407 Proxy Authentication Required  代表客户端错误，指的是由于缺乏位于浏览器与可以访问所请求资源的服务器之间的代理服务器（proxy server&nbsp;）要求的身份验证凭证，发送的请求尚未得到满足。">
+        <code>407 Proxy Authentication Required</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/408" title="响应状态码&nbsp;408 Request Timeout&nbsp;表示服务器想要将没有在使用的连接关闭。一些服务器会在空闲连接上发送此信息，即便是在客户端没有发送任何请求的情况下。">
+        <code>408 Request Timeout</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/409" title="响应状态码&nbsp;409 Conflict 表示请求与当前服务器端的状态相冲突。">
+        <code>409 Conflict</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/410" title="The compatibility table in this page is generated from structured data. If you'd like to contribute to the data, please check out https://github.com/mdn/browser-compat-data and send us a pull request.">
+        <code>410 Gone</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/411" title="响应状态码&nbsp;411 Length Required &nbsp;属于客户端错误，表示由于缺少确定的Content-Length 首部字段，服务器拒绝客户端的请求。">
+        <code>411 Length Required</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/412" title="在 HTTP 协议中，响应状态码 412 Precondition Failed（先决条件失败）表示客户端错误，意味着对于目标资源的访问请求被拒绝。这通常发生于采用除&nbsp;GET 和 HEAD 之外的方法进行条件请求时，由首部字段 If-Unmodified-Since 或 If-None-Match 规定的先决条件不成立的情况下。这时候，请求的操作——通常是上传或修改文件——无法执行，从而返回该错误状态码。">
+        <code>412 Precondition Failed（先决条件失败）</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/413" title="响应状态码&nbsp;413 Payload Too Large 表示请求主体的大小超过了服务器规定的限度，服务器可以选择关闭连接或者返回&nbsp; Retry-After 首部字段。">
+        <code>413 Payload Too Large</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/414" title="响应码&nbsp;414 URI Too Long 表示客户端所请求的 URI 超过了服务器允许的范围。">
+        <code>414 URI Too Long</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/415" title="415 Unsupported Media Type 是一种HTTP协议的错误状态代码，表示服务器由于不支持其有效载荷的格式，从而拒绝接受客户端的请求。">
+        <code>415 Unsupported Media Type</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/416" title="HTTP 416 Range Not Satisfiable 错误状态码意味着服务器无法处理所请求的数据区间。最常见的情况是所请求的数据区间不在文件范围之内，也就是说，Range 首部的值，虽然从语法上来说是没问题的，但是从语义上来说却没有意义。">
+        <code>416 Range Not Satisfiable</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/417" title="HTTP协议中的&nbsp;&nbsp;417 Expectation Failed 状态码表示客户端错误，意味着服务器无法满足 Expect 请求消息头中的期望条件。">
+        <code>417 Expectation Failed</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/418" title="HTTP 418 I'm a teapot 客户端错误响应代码表示服务器拒绝冲泡咖啡，因为它是一个茶壶。 这个错误是超文本咖啡壶控制协议的参考，这是1998年愚人节的笑话。">
+        <code>418 I'm a teapot</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/422" title="The HyperText Transfer Protocol (HTTP) 422 Unprocessable Entity response status code indicates that the server understands the content type of the request entity, and the syntax of the request entity is correct, but it was unable to process the contained instructions.">
+        <code>422 Unprocessable Entity</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/426" title="426 Upgrade Required 是一种HTTP协议的错误状态代码，表示服务器拒绝处理客户端使用当前协议发送的请求，但是可以接受其使用升级后的协议发送的请求。">
+        <code>426 Upgrade Required</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/428" title="在HTTP协议中，响应状态码&nbsp;&nbsp;428 Precondition Required 表示服务器端要求发送条件请求。">
+        <code>428 Precondition Required</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/429" title="在HTTP协议中，响应状态码 &nbsp;429 Too Many Requests 表示在一定的时间内用户发送了太多的请求，即超出了“频次限制”。">
+        <code>429 Too Many Requests</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/431" title="响应码&nbsp;431 Request Header Fields Too Large 表示由于请求中的首部字段的值过大，服务器拒绝接受客户端的请求。客户端可以在缩减首部字段的体积后再次发送请求。">
+        <code>431 Request Header Fields Too Large</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/451" title="451 Unavailable For Legal Reasons （因法律原因不可用）是一种HTTP协议的错误状态代码，表示服务器由于法律原因，无法提供客户端请求的资源，例如可能会导致法律诉讼的页面。">
+        <code>451 Unavailable For Legal Reasons</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/500" title="在 HTTP 协议中，500 Internal Server Error 是表示服务器端错误的响应状态码，意味着所请求的服务器遇到意外的情况并阻止其执行请求。">
+        <code>500 内部服务器错误</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/501" title="HTTP 501 Not Implemented&nbsp;服务器错误响应码表示请求的方法不被服务器支持，因此无法被处理。服务器必须支持的方法（即不会返回这个状态码的方法）只有 GET 和 HEAD。">
+        <code>501 Not Implemented</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/502" title="502 Bad Gateway 是一种HTTP协议的服务器端错误状态代码，它表示作为网关或代理角色的服务器，从上游服务器（如tomcat、php-fpm）中接收到的响应是无效的。">
+        <code>502 Bad Gateway</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/503" title="503 Service Unavailable 是一种HTTP协议的服务器端错误状态代码，它表示服务器尚未处于可以接受请求的状态。">
+        <code>503 Service Unavailable</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/504" title="504 Gateway Timeout 是一种HTTP协议的服务器端错误状态代码，表示扮演网关或者代理的服务器无法在规定的时间内获得想要的响应。">
+        <code>504 Gateway Timeout</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/505" title="505 HTTP Version Not Supported 是一种HTTP协议的服务器端错误状态代码，表示服务器不支持请求所使用的 HTTP 版本。">
+        <code>505 HTTP Version Not Supported</code>
+      </a>
+    </li>
+    <li>
+      <a href="/zh-CN/docs/Web/HTTP/Status/511" title="511 Network Authentication Required 是一种HTTP协议的错误状态代码，表示客户端需要通过验证才能使用该网络。">
+        <code>511 Network Authentication Required</code>
+      </a>
+    </li>
+  </ol>
+  <script>
+    var a = document.querySelectorAll('.toggle-container a');
+    var code = document.querySelectorAll('.toggle-container code');
+    console.log(a);
+    console.log(a[0].innerHTML);
+    // console.log([].slice.call(li))
+    var title = [];
+    var content = [];
+    for (let i = 0; i < a.length; i++) {
+      title.push(a[i].getAttribute('title'));
+    }
+    for (let i = 0; i < code.length; i++) {
+      content.push(code[i].innerHTML);
+    }
+    console.log(title);
+    console.log(content);
+  </script>
+</body>
+
+</html>
