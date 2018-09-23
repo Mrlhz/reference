@@ -160,21 +160,18 @@
                 const key = tmp[0];
                 let value = tmp[1] || true;
                 if (typeof value === 'string' && isNaN(Number(value)) === false) {
-                    value = Number(value);
+                    value = Number(value); // if判断value == '123'时
                 }
-                return {
+                return {  // {key: "enabled", value: true}
                     key,
                     value
                 };
             }).reduce((params, item) => {
-                const {
-                    key,
-                    value
-                } = item;
+                const { key,value } = item;
                 if (typeof params[key] === 'undefined') {
                     params[key] = value;
                 } else {
-                    params[key] = Array.isArray(params[key]) ? params[key] : [params[key]];
+                    params[key] = Array.isArray(params[key]) ? params[key] : [params[key]]; // &id=123&id=456
                     params[key].push(value);
                 }
                 return params;
