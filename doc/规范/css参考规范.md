@@ -11,3 +11,14 @@ CSS书写顺序　　
 4. 背景(background, border等)　　
 5. 其他(animation, transition等)
 ```
+
+
+显示属性 | 自身属性 | 文本属性和其他修饰
+---|--- |---
+display     |   width   | font
+visibility  |   height  | text-align
+position    |   margin	| text-decoration
+float       |   padding	| vertical-align
+clear       |	border  | white-space
+list-style	|   overflow| color
+top	        |   min-width |	background

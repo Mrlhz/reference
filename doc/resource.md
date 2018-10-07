@@ -34,6 +34,9 @@
 - [layui](https://www.layui.com/)
 - [MuseUI](https://muse-ui.org/#/zh-CN)
 
+## 图标
+- [Font Awesome](http://www.fontawesome.com.cn/)
+
 ## 工具
 ### vscode
 - [quokka](https://quokkajs.com/docs/)
