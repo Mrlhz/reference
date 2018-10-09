@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Button 按钮</title>
+    <style>
+        /* CSS揭秘 */
+        ._btn {
+            padding: .3em .8em;
+            border: 1px solid rgba(0, 0, 0, .1);
+            border-radius: .2em;
+            box-shadow: 0 .05em .25em rgba(0, 0, 0, .5);
+            font-size: 125%;
+            line-height: 1.5;
+            background: #58a linear-gradient(hsla(0, 0%, 100%, .2), transparent);
+            color: white;
+            text-shadow: 0 -.05em .05em rgba(0, 0, 0, .5);
+        }
+
+        button.cancel {
+            background-color: #c00;
+        }
+
+        button.default {
+            border-color: #ccc;
+            background-color: #ccc;
+        }
+
+        button.primary {
+            border-color: #6190e8;
+            background-color: #6190e8;
+        }
+
+        button.success {
+            border-color: #13ce66;
+            background-color: #13ce66;
+        }
+
+        button.error {
+            border-color: #ff4949;
+            background-color: #ff4949;
+        }
+
+        button.warning {
+            border-color: #ffc82c;
+            background-color: #ffc82c;
+        }
+
+        button.info {
+            border-color: #78a4fa;
+            background-color: #78a4fa
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Secrets: Better Solutions to Everyday Web Design Problems</h1>
+    <section>
+        <button class="_btn default">默认按钮</button>
+        <button class="_btn primary">主要按钮</button>
+        <button class="_btn success">成功按钮</button>
+        <button class="_btn error">危险按钮</button>
+        <button class="_btn warning">警告按钮</button>
+        <button class="_btn info">信息按钮</button>
+        <div style="margin:50px auto;">
+            <button class="_btn info"><a href="http://www.bootcss.com/p/buttons/" target="_blank">Buttons</a></button>
+            <button class="_btn success"><a href="https://at-ui.github.io/at-ui/#/zh/docs/button" target="_blank">AT-UI-Style</a></button>
+            <button class="_btn info"><a href="https://v4.bootcss.com/docs/4.0/components/buttons/" target="_blank">bootcss</a></button>
+        </div>
+</body>
+
+</html>
