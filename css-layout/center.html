@@ -8,49 +8,47 @@
   <title>水平垂直</title>
   <link rel="stylesheet" href="./list.css">
   <style>
-    body {
-      color: rgba(0, 0, 0, 0.65);
-    }
-
-    section {
-      display: flex;
-      justify-content: center;
-    }
-
-    .list-wrap {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      width: 58rem;
-      height: 20rem;
-      border-radius: 4px;
-      border: 1px solid #d9d9d9;
-    }
-
-    .list-item {
-      /* display: flex;
-      flex: 1; */
-      width: 100%;
-      padding: 12px 0;
-      border-bottom: 1px solid #e8e8e8;
-      padding-left: 24px;
-      padding-right: 24px;
-      font-size: 14px;
-    }
   </style>
 </head>
 
 <body>
   <section>
     <div class="list-wrap">
-      <div class="list-item">水平垂直</div>
-      <div class="list-item">水平垂直</div>
-      <div class="list-item">水平垂直</div>
-      <div class="list-item">水平垂直</div>
+      <ul>
+        <li class="list-item">居中布局</li>
+        <div class="mainc hide">
+          <li class="list-item">水平</li>
+          <li class="list-item">垂直</li>
+          <li class="list-item">水平垂直</li>
+        </div>
+        <li class="list-item">多列布局</li>
+        <div class="mainc hide">
+          <li class="list-item">一列定宽，一列自适应</li>
+          <li class="list-item">多列定宽，一列自适应</li>
+          <li class="list-item">一列不定宽，一列自适应</li>
+          <li class="list-item">多列不定宽，一列自适应</li>
+        </div>
+        <li class="list-item">等分</li>
+        <li class="list-item">等高</li>
+      </ul>
     </div>
   </section>
+  <script>
+    var toggle = function (cls,mainc) {
+      var main = Array.from(mainc)
+      Array.from(cls).map((item) => {
+        item.addEventListener('click', function () {
+          console.log(this)
+          // c.style.borderColor = '#00abff';
+          item.classList.toggle('change-color')
+          main[0].classList.toggle('hide')
+        })
+      })
+    }
+    var lists = document.querySelectorAll('.list-item')
+    var mainc = document.querySelectorAll('.mainc')
+    toggle(lists,mainc)
+  </script>
 </body>
 
 </html>

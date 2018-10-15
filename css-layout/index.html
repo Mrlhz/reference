@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>居中布局</title>
+  <style>
+    section {
+      margin: 1rem 25rem;
+      border: 1px solid #e8e8e8;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    .item {
+      width: 80%;
+      height: 60px;
+      /* margin: 5px 0; */
+      text-align: center;
+      line-height: 60px;
+      background-color: #00abff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- flex -->
+  <section class="flex">
+    <div class="wrap" style="display: flex;justify-content: center;">
+      <div class="item">flex + justify-content</div>
+    </div>
+  </section>
+
+  <!-- absolute + transform -->
+  <section style="height:60px;">
+    <div class="wrap" style="position: relative;">
+      <div class="item" style="position: absolute;left: 50%;transform: translateX(-50%);">absolute + transform</div>
+    </div>
+  </section>
+
+  <!-- table + margin -->
+  <section>
+    <div class="wrap" style="">
+      <div class="item" style="display: table;margin:0 auto;">table + margin</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="text-align: center;">
+      <div class="item" style="display:inline-block;">inline-block + text-align</div>
+    </div>
+  </section>
+
+  <!-- 垂直居中 -->
+  <hr>
+  <h2>垂直居中</h2>
+  <!-- felx -->
+  <section>
+    <div class="wrap" style="display: flex;align-items: center;height:100px;">
+      <div class="item">flex + align-items</div>
+    </div>
+  </section>
+
+  <!-- 水平垂直居中 -->
+  <style>
+    .before::before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 0;
+      vertical-align: middle;
+    }
+  </style>
+  <section>
+    <div class="wrap before" style="margin: auto;text-align: center;">
+      <div class="item" style="display: inline-block;vertical-align: middle;">:before + inline-block</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="">
+      <div class="item" style=""></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="">
+      <div class="item" style=""></div>
+    </div>
+  </section>
+</body>
+
+</html>
