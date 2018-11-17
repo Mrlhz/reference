@@ -70,16 +70,16 @@ function test() {
 
 test();
 
-setTimeout(function(){
+setTimeout(function () {
     console.log('定时器开始啦4')
 });
 
-new Promise(function(resolve){
+new Promise(function (resolve) {
     console.log('马上执行for循环啦1');
-    for(var i = 0; i < 10000; i++){
+    for (var i = 0; i < 10000; i++) {
         i == 99 && resolve();
     }
-}).then(function(){
+}).then(function () {
     console.log('执行then函数啦3')
 });
 
@@ -87,13 +87,44 @@ console.log('代码执行结束2');
 
 function timeout(ms) {
     return new Promise((resolve, reject) => {
-      setTimeout(resolve, ms, 'done');
+        setTimeout(resolve, ms, 'done');
     });
-  }
-  
-  timeout(2000).then((value) => {
+}
+
+timeout(2000).then((value) => {
     console.log(value);
-  });
+});
 
 
-  
+function Rectangle(length, width) {
+    this.length = length;
+    this.width = width;
+}
+Rectangle.prototype.getArea = function () {
+    return this.length * this.width;
+};
+Rectangle.prototype.toString = function () {
+    return "[Rectangle " + this.length + "x" + this.height + "]";
+};
+// inherits from Rectangle
+function Square(size) {
+    Rectangle.call(this, size, size);
+}
+Square.prototype = Object.create(Rectangle.prototype, {
+    constructor: {
+        configurable: true,
+        enumerable: true,
+        value: Square,
+        writable: true
+    }
+});
+// call the supertype method
+Square.prototype.toString = function () {
+    var text = Rectangle.prototype.toString.call(this);
+    return text.replace("Rectangle", "Square");
+};
+
+var square = new Square(6);
+console.log(square.length);
+console.log(square.width);
+console.log(square.getArea());

@@ -1,4 +1,4 @@
- /**
+/**
  * 
  * @param {string} str 带有参数url地址
  * 1. 返回从问号到 URL 末尾的所有内容(location.search)
