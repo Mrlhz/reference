@@ -1,17 +1,6 @@
 # web
 学习笔记
 
-[Daily Developer Tips](https://gomakethings.com/articles/)
-emmet
-```
-ul>li._item*3{$}
-<ul>
-    <li class="_item">1</li>
-    <li class="_item">2</li>
-    <li class="_item">3</li>
-</ul>
-```
-
 ## Flex布局
 
 ## 容器的属性
