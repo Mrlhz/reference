@@ -54,6 +54,15 @@ space-around | 每根轴线两侧的间隔都相等。轴线之间的间隔比�
 stretch（默认值）| 轴线占满整个交叉轴
 
 ## align-self属性
-align-self: | auto | flex-start | flex-end | center | baseline | stretch
---- | --- | --- | --- | --- | ---
+- [align-self](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-self)
+
+属性 | 	描述
+--- | --- 
+auto | 设置为父元素的 align-items 值，如果该元素没有父元素的话，就设置为 stretch
+flex-start | 元素会对齐到 cross-axis 的首端
+flex-end | 元素会对齐到 cross-axis 的尾端
+center | 元素会对齐到 cross-axis 的中间，如果该元素的 cross-size 的尺寸大于 flex 容器，将在两个方向均等溢出
+baseline | 所有的 flex 元素会沿着基线对齐
+stretch | 元素将会基于容器的宽和高，按照自身 margin box 的 cross-size 拉伸
+
 除了auto，其他都与align-items属性完全一致
