@@ -15,6 +15,27 @@
                 [],
                 []
             ]);
+
+        var users = [{
+            id: 1,
+            name: "a"
+        }, {
+            id: 2,
+            name: "a"
+        }, {
+            id: 3,
+            name: "b"
+        }, {
+            id: 4,
+            name: "v"
+        }]
+
+        Array.prototype.unique = function () {
+            return this.reduce((acc,item) => {
+                acc.push(item.name)
+                return [...new Set(acc)]
+            },[])
+        }
     </script>
 </body>
 

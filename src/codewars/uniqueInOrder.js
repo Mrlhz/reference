@@ -23,3 +23,31 @@
     console.log(uniqueInOrder('ABBCcAD'));
     console.log(uniqueInOrder([1,2,2,3,3]));
 }
+
+{
+    var str = [1,2,2,3,3]
+    var arr = []
+    for (let i = 0; i < str.length; i++) {
+        if(str[i] === str[i+1]){
+            continue;
+        }
+        arr.push(str[i])
+    }
+    console.log(arr)
+}
+
+{
+    // https://github.com/msachi/codewars
+    var sort = (arr) => arr.sort( (x,y) => x-y)
+    var sum = (arr) => {
+        var [one, two] = arr.sort( (x,y) => x-y)
+        return one + two;
+    }
+}
+
+{
+    var s = 'abcba'
+    function ishuiwen(str){
+        return str === str.split('').reverse().join()
+    }
+}
