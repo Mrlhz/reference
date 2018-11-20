@@ -20,9 +20,12 @@
 - `align-self`属性允许单个项目有与其他项目不一样的对齐方式，可覆盖`align-items`属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
 
 ## flex-direction属性
-row | row-reverse | column |  column-reverse
---- | --- | --- |--- |---
-水平方向(起点在左) &rarr;    |   水平方向 &larr;  | 垂直方向 &darr; |   垂直方向 &uarr; 
+属性 | 	描述
+--- | --- 
+row | 水平方向(起点在左) &rarr; 
+row-reverse | 水平方向 &larr;
+column | 垂直方向 &darr;
+column-reverse | 垂直方向 &uarr;
 
 ## flex-wrap属性
 nowrap | wrap | wrap-reverse
@@ -66,3 +69,20 @@ baseline | 所有的 flex 元素会沿着基线对齐
 stretch | 元素将会基于容器的宽和高，按照自身 margin box 的 cross-size 拉伸
 
 除了auto，其他都与align-items属性完全一致
+
+## Emmet
+- [Emmet 文档](http://yanxyz.github.io/emmet-docs/)
+
+el.`#page>div.logo+ul#navigation>li*5>a{Item $}`
+```html
+<div id="page">
+    <div class="logo"></div>
+    <ul id="navigation">
+        <li><a href="">Item 1</a></li>
+        <li><a href="">Item 2</a></li>
+        <li><a href="">Item 3</a></li>
+        <li><a href="">Item 4</a></li>
+        <li><a href="">Item 5</a></li>
+    </ul>
+</div>
+```
