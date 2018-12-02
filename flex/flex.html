@@ -1,0 +1,44 @@
+<html>
+<style>
+  .item {
+    width: 32%;
+    background-color: #00abff;
+    height: 60px;
+    margin-top: 10px;
+  }
+
+  .itemempty {
+    height: 0px;
+    width: 32%;
+  }
+
+  .box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  /* .利于after（适用于每行列数确定的场景） */
+  /* .box:after {
+    content: "";
+    flex: auto;
+  } */
+</style>
+
+<body>
+  <div class="box">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="itemempty"></div>
+    <div class="itemempty"></div>
+    <div class="itemempty"></div>
+  </div>
+</body>
+
+</html>
