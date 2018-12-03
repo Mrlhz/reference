@@ -1,6 +1,7 @@
-import {
-  info
-} from './data'
+// import {
+//   info
+// } from './data'
+var inf0 = require('./data.js')
 
 let {
   lst

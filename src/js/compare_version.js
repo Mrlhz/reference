@@ -25,6 +25,7 @@ for (let i = 0; i < versionArr1.length; i++) {
 }
 console.log(result);
 
+// 请用您熟悉的编程语言，编程实现一个比较任意两个软件版本号大小的函数，如 1.2.3a 和 1.2.4b 比较，后者版本号更大，请考虑各种情况，不可以使用系统提供的比较函数
 toNumber('1.2.3b');
 toNumber('1.1.30b');
 toNumber('1.20.3a');

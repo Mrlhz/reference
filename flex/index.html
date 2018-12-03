@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>flex布局多个子元素如何既有左对齐也有右对齐</title>
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+      section {
+        width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #007bff;
+      }
+      .flex-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .flex-item {
+        width: 100px;
+        height: 100px;
+        margin: 1px;
+        border: 1px solid #6610f2;
+      }
+      .center{
+        flex: 1;
+        border-color: #fd7e14;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="flex-box">
+        <div class="flex-box flex-item">
+          <div class="flex-item">1</div>
+          <div class="flex-item">4</div>
+        </div>
+        <div class="flex-item center">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </section>
+  </body>
+</html>

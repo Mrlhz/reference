@@ -1,0 +1,22 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .bs-example{
+    margin-right: 0;
+    margin-left: 0;
+    border-color: #ddd;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px 4px 0 0; /* left right */
+  }
+}
+.bs-example{
+  width: 75%;
+}
+.bs-example th{
+  padding: 8px;
+  line-height: 1.42857143;
+}

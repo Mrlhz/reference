@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pie饼状图</title>
+    <style>
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+      html {
+        height: 100%;
+      }
+      #container {
+        width: 350px;
+        height: 175px;
+      }
+      #app1,
+      #app2 {
+        width: 350px;
+        height: 175px;
+      }
+      .row:after {
+        display: table;
+        content: " ";
+        clear: both;
+      }
+      .row {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+
+      .col-md-6 {
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+      @media (min-width: 768px) {
+        .container {
+          width: 750px;
+        }
+      }
+      @media (min-width: 992px) {
+        .container {
+          width: 970px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .container {
+          width: 1170px;
+        }
+      }
+      @media (min-width: 768px) {
+        .col-md-6 {
+          width: 50%;
+        }
+      }
+
+      [class*="col-"] {
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div class="row">
+      <div class="col-md-6"><div id="app1"></div></div>
+      <div class="col-md-6"><div id="app2"></div></div>
+    </div>
+
+    <!--
+      <script src="https://cdn.bootcss.com/echarts/4.1.0/echarts.js"></script>
+    -->
+    <script src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <script>
+      var dom = document.getElementById("container");
+      var app1 = document.getElementById("app1");
+      var app2 = document.getElementById("app2");
+      var data = [
+        { value: 335, name: "直接访问" },
+        { value: 310, name: "邮件营销" },
+        { value: 234, name: "联盟广告" },
+        { value: 135, name: "视频广告" },
+        { value: 1548, name: "搜索引擎" }
+      ];
+
+      function makePie(dom, data) {
+        var myChart = echarts.init(dom);
+        option = null;
+
+        option = {
+          tooltip: {
+            trigger: "item",
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+          },
+          series: [
+            {
+              name: "访问来源",
+              type: "pie",
+              radius: ["50%", "70%"],
+              avoidLabelOverlap: false,
+              label: {
+                emphasis: {
+                  show: true,
+                  textStyle: {
+                    fontSize: "16",
+                    fontWeight: "bold"
+                  }
+                }
+              },
+              labelLine: {
+                normal: {
+                  show: true // 显示圆环与文字说明之间的线条
+                }
+              },
+              data: data
+            }
+          ]
+        };
+        if (option && typeof option === "object") {
+          myChart.setOption(option, true);
+        }
+      }
+
+      makePie(app1, data);
+      makePie(app2, data);
+    </script>
+  </body>
+</html>
