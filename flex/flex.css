@@ -1,0 +1,173 @@
+body {
+    line-height: 1.5;
+    font-family: "Open Sans", arial, x-locale-body, sans-serif;
+}
+
+h1 {
+    font-family: x-locale-heading-primary, zillaslab, Palatino, "Palatino Linotype", x-locale-heading-secondary, serif;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.document-head {
+    background-color: #f5f9fa;
+    padding: 20px 0;
+}
+
+.highlight-span {
+    padding: 0 4px 0 40px;
+    background-color: #333;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    border: 2px solid rgb(96, 139, 168);
+    border-radius: 5px;
+    background-color: rgba(96, 139, 168, .2);
+    padding: 10px;
+    display: block;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box div {
+    width: 100px;
+    height: 100px;
+}
+
+.box {
+    width: 500px;
+    height: 300px;
+    border: 2px dotted rgb(96, 139, 168);
+}
+
+.box>* {
+    border: 2px solid rgb(96, 139, 168);
+    border-radius: 5px;
+    background-color: rgba(96, 139, 168, .2);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card .content {
+    flex: 1 1 auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+}
+
+.card {
+    border: 2px solid rgb(96, 139, 168);
+    border-radius: 5px;
+}
+
+.card .content {
+    padding: 10px;
+}
+
+.card footer {
+    background-color: rgba(96, 139, 168, .2);
+    padding: 10px;
+}
+
+.media {
+    display: flex;
+    align-items: flex-start;
+}
+
+.media .content {
+    flex: 1;
+    padding: 10px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.media {
+    width: 300px;
+    border: 2px dotted rgb(96, 139, 168);
+}
+
+.media .image {
+    margin: 0 10px 0 0;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.wrapper input[type="text"] {
+    flex: 1 1 auto;
+}
+
+.wrapper {
+    border: 1px solid rgb(96, 139, 168);
+}
+
+.wrapper>* {
+    border: none;
+    line-height: 1;
+}
+
+.wrapper input[type="text"] {
+    background-color: rgba(96, 139, 168, .5);
+    border-right: 1px solid rgb(96, 139, 168);
+}
+
+.wrapper input[type="submit"] {
+    background-color: rgba(96, 139, 168, 1);
+    color: #fff;
+}
+
+section {
+    width: 90%;
+    max-width: 700px;
+    border: 1px solid #4D4E53;
+    border-radius: 2px;
+    padding: 10px 14px 10px 10px;
+    margin-bottom: 10px;
+}
+
+section input {
+    display: block;
+    margin: 5px;
+}
+section .example label,
+section .example input {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: normal;
+    padding: 10px;
+}
+
+.wrapper label {
+    background-color: #666;
+    color: #fff;
+}

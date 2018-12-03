@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flexbox典型用例</title>
+    <link rel="stylesheet" href="./flex.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="document-head">
+        <h1>Flexbox典型用例</h1>
+    </div>
+    <section>
+        <h3 class="highlight-spanned">
+            <span class="highlight-span">using justify-content.</span>
+        </h3>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Page 1</a>
+                </li>
+                <li>
+                    <a href="#">Page 2</a>
+                </li>
+                <li>
+                    <a href="#">Page 3 is longer</a>
+                </li>
+                <li>
+                    <a href="#">Page 4</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <h3 class="highlight-spanned">
+            <span class="highlight-span">Center item</span>
+        </h3>
+        <div class="box">
+            <div></div>
+        </div>
+    </section>
+    <section>
+        <h3 class="highlight-spanned">
+            <span class="highlight-span">Card layout pushing footer down.</span>
+        </h3>
+        <div class="cards">
+            <div class="card">
+                <div class="content">
+                    <p>This card doesn't have much content.</p>
+                </div>
+                <footer>Card footer</footer>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <p>This card has a lot more content which means that it defines the height of the container the cards are
+                        in. I've laid the cards out using grid layout, so the cards themselves will stretch to the same height.</p>
+                </div>
+                <footer>Card footer</footer>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3 class="highlight-spanned">
+            <span class="highlight-span">Media objects</span>
+        </h3>
+        <div class="media">
+            <div class="image">
+                <img src="https://placehold.it/60x60" alt="placeholder">
+            </div>
+            <div class="content">This is the content of my media object. Items directly inside the flex container will be aligned to flex-start.</div>
+        </div>
+    </section>
+    <section>
+        <h3 class="highlight-spanned">
+            <span class="highlight-span">Form controls</span>
+        </h3>
+        <form class="example">
+            <div class="wrapper">
+                <input type="text" id="text"><input type="submit" value="Send">
+            </div>
+        </form>
+        <br>
+        <form class="example">
+            <div class="wrapper"><label for="text">Label</label>
+                <input type="text" id="text"><input type="submit" value="Send">
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>
