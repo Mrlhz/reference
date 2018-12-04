@@ -22,3 +22,8 @@ var foo = require('other_module');
 ```
 
 - [文件系统](http://nodejs.cn/api/fs.html)
+- [Node.js 连接 MySQL](http://www.runoob.com/nodejs/nodejs-mysql.html)
+
+## 在Navicat for MySQL中查看数据表创建语句
+
+右键数据表，对象信息，选择“DDL”即可
