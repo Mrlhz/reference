@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>box-shadow</title>
+  <style>
+    body {
+      background: #f4f4f4
+    }
+    
+    .items{
+      display: flex;
+      justify-content: space-around;
+      margin: 30px;
+    }
+    .items .item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);
+    }
+
+    .item {
+      width: 449px;
+      height: 104px;
+      padding: 22px 20px 30px;
+      display: block;
+      text-decoration: none;
+      transition: all .3s ease;
+      background: #fff;
+      border-radius: 10px;
+      font-size: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="items">
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</body>
+
+</html>
