@@ -10,7 +10,7 @@
 - `db.[collection name].update()`更新文档,用于更新已存在的文档
 - `db.[collection name].save()`更新文档,通过传入的文档来替换已有文档
 - `db.[collection name].remove()`删除文档
-- `db.[collection name].find(query, projection)`查询文档
+- `db.[collection name].find(query, projection)[.pretty()]`查询文档
 
 
 - [MongoDB创建数据库](#create)
