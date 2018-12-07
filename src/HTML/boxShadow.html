@@ -10,12 +10,13 @@
     body {
       background: #f4f4f4
     }
-    
-    .items{
+
+    .items {
       display: flex;
       justify-content: space-around;
       margin: 30px;
     }
+
     .items .item:hover {
       transform: translateY(-6px);
       box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);
@@ -32,6 +33,20 @@
       border-radius: 10px;
       font-size: 0;
     }
+
+    .box {
+      display: block;
+      padding: 1rem;
+      margin: 0 auto;
+      width: 628px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      background: #100;
+      color: #f6f5de;
+      box-shadow: 0 10px 0 -5px #be6700,
+                  0 20px 0 -10px #6cf,
+                  0 30px 0 -16px #dedcb9;
+    }
   </style>
 </head>
 
@@ -40,6 +55,10 @@
     <div class="item"></div>
     <div class="item"></div>
   </div>
+
+  <section>
+    <div class="box"></div>
+  </section>
 </body>
 
 </html>
