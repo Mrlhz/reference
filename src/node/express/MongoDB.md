@@ -12,6 +12,22 @@
 - `db.[collection name].remove()`删除文档
 - `db.[collection name].find(query, projection)[.pretty()]`查询文档
 
+## Queries
+- [链式查询构建器API](https://mongoosejs.com/docs/queries.html)
+- `Model.deleteMany()`
+- `Model.deleteOne()`
+- `Model.find()`
+- `Model.findById()`
+- `Model.findByIdAndDelete()`
+- `Model.findByIdAndRemove()`
+- `Model.findByIdAndUpdate()`
+- `Model.findOne()`
+- `Model.findOneAndDelete()`
+- `Model.findOneAndRemove()`
+- `Model.findOneAndUpdate()`
+- `Model.replaceOne()`
+- `Model.updateMany()`
+- `Model.updateOne()`
 
 - [MongoDB创建数据库](#create)
 - [MongoDB删除数据库](#drop)

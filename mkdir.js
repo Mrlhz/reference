@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-var fs = require('fs'),
-    path = require('path');
+var fs = require('fs');
+var path = require('path');
 
 var folders = {};
 var outputText = '';
@@ -17,6 +17,8 @@ var currentWorkingDirectory = process.cwd();
 
 var folderIgnoreList = [
   '.git',
+  '.idea',
+  '.DS_Store',
   'node_modules'
 ];
 
