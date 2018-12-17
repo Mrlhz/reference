@@ -1,100 +1,208 @@
 # web
 
-- [Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
-- [Flex 布局教程：实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
+<details>
+<summary>工厂模式</summary>
 
-## Flex布局
-
-## 容器的属性
-
-- `flex-direction`属性决定主轴的方向（即项目的排列方向）
-- `flex-wrap`属性定义，如果一条轴线排不下，如何换行
-- `flex-flow`属性是`flex-direction`属性和`flex-wrap`属性的简写形式，默认值为`row nowrap`
-- `justify-content`属性定义了项目在主轴上的对齐方式
-- `align-items`属性定义项目在交叉轴上如何对齐
-- `align-content`属性定义了多根轴线（多行）的对齐方式。如果项目只有一根轴线，该属性不起作用
-
-## 项目的属性
-
-- order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0
-- flex-grow属性定义项目的放大比例，`默认为0`，即如果存在剩余空间，也不放大
-- flex-shrink属性定义了项目的缩小比例，`默认为1`，即如果空间不足，该项目将缩小
-- `flex-basis`属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的`默认值为auto`，即项目的本来大小
-- `flex`属性是`flex-grow`, `flex-shrink` 和 `flex-basis`的简写，默认值为`0 1 auto`。后两个属性可选
-- `align-self`属性允许单个项目有与其他项目不一样的对齐方式，可覆盖`align-items`属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch
-
-## flex-direction属性
-
-属性 | 描述
---- | ---
-row | 水平方向(起点在左) &rarr;
-row-reverse | 水平方向 &larr;
-column | 垂直方向 &darr;
-column-reverse | 垂直方向 &uarr;
-
-## flex-wrap属性
-
-nowrap | wrap | wrap-reverse
---- | --- | --- 
-不换行    |   换行 &darr;  | 换行 &uarr;
-
-## justify-content属性
-
-flex-start | flex-end | center |  space-between | space-around
---- | --- | --- |--- |---
-左对齐 | 右对齐 | 居中 | 两端对齐，项目之间的间隔都相等 | 每个项目两侧的间隔相等
-
-## align-items属性
-
-属性 | 描述
---- | ---
-flex-start  | 交叉轴的起点对齐
-flex-end    | 交叉轴的终点对齐
-center      | 交叉轴的中点对齐
-baseline    | 项目的第一行文字的基线对齐
-stretch     | 如果项目未设置高度或设为auto，将占满整个容器的高度
-
-## align-content属性
-
-属性 | 描述
---- | ---
-flex-start | 与交叉轴的起点对齐
-flex-end | 与交叉轴的终点对齐
-center | 与交叉轴的中点对齐
-space-between | 与交叉轴两端对齐，轴线之间的间隔平均分布
-space-around | 每根轴线两侧的间隔都相等。轴线之间的间隔比轴线与边框的间隔大一倍
-stretch（默认值）| 轴线占满整个交叉轴
-
-## align-self属性
-
-- [align-self](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-self)
-
-属性 | 描述
---- | ---
-auto | 设置为父元素的 align-items 值，如果该元素没有父元素的话，就设置为 stretch
-flex-start | 元素会对齐到 cross-axis 的首端
-flex-end | 元素会对齐到 cross-axis 的尾端
-center | 元素会对齐到 cross-axis 的中间，如果该元素的 cross-size 的尺寸大于 flex 容器，将在两个方向均等溢出
-baseline | 所有的 flex 元素会沿着基线对齐
-stretch | 元素将会基于容器的宽和高，按照自身 margin box 的 cross-size 拉伸
-
-除了auto，其他都与align-items属性完全一致
-
-## Emmet
-
-- [Emmet 文档](http://yanxyz.github.io/emmet-docs/)
-
-el.`#page>div.logo+ul#navigation>li*5>a{Item $}`
-
-```html
-<div id="page">
-    <div class="logo"></div>
-    <ul id="navigation">
-        <li><a href="">Item 1</a></li>
-        <li><a href="">Item 2</a></li>
-        <li><a href="">Item 3</a></li>
-        <li><a href="">Item 4</a></li>
-        <li><a href="">Item 5</a></li>
-    </ul>
-</div>
 ```
+|-- web
+    |-- canvas
+    |   |-- drawBarChart.html
+    |   |-- drawPieChart.html
+    |   |-- lineStyles.js
+    |   |-- note.md
+    |   |-- style.js
+    |   |-- transformations.js
+    |   |-- tutorial.html
+    |   |-- tutorial.js
+    |   |-- echarts
+    |   |   |-- pie
+    |   |       |-- makePie.js
+    |   |       |-- pie.html
+    |   |-- w3cplus
+    |       |-- bar-simple.html
+    |       |-- drawing-arc-and-circle.html
+    |       |-- util.js
+    |       |-- w3cplus.js
+    |-- css-layout
+    |   |-- Accordion-Menus.html
+    |   |-- accordion.html
+    |   |-- alert.html
+    |   |-- arrordion.css
+    |   |-- menus.css
+    |   |-- tooltip.html
+    |   |-- zepto.comment.js
+    |   |-- zepto.html
+    |   |-- zepto.js
+    |   |-- zepto.v1.0-1.js
+    |-- css_hack
+    |   |-- index.html
+    |   |-- note.md
+    |-- doc
+    |   |-- hexo.md
+    |   |-- http.md
+    |   |-- mathjax_cmdeditor.md
+    |   |-- npm.md
+    |   |-- resource.md
+    |   |-- Interview
+    |   |   |-- 3-10_prototype-chain.md
+    |   |   |-- 3-8_HTTP协议类.md
+    |   |   |-- 8-2_页面加载-渲染过程.md
+    |   |   |-- BFC.md
+    |   |   |-- context.md
+    |   |   |-- FE-interview.md
+    |   |   |-- 原型链.md
+    |   |-- layout
+    |   |   |-- center.html
+    |   |   |-- layout.html
+    |   |   |-- Transform.html
+    |   |   |-- css
+    |   |       |-- layout.css
+    |   |       |-- transform.css
+    |   |-- 规范
+    |       |-- BEM.md
+    |       |-- css参考规范.md
+    |-- flex
+    |   |-- CSS_Flexible_Box_Layout.html
+    |   |-- flex.css
+    |   |-- flex.html
+    |   |-- FlexboxDice.html
+    |   |-- index.html
+    |   |-- note.md
+    |-- src
+    |   |-- js-assessment.js
+    |   |-- codewars
+    |   |   |-- uniqueInOrder.js
+    |   |-- components
+    |   |   |-- example.jpeg
+    |   |   |-- Lazy.render.html
+    |   |   |-- loading.gif
+    |   |-- css
+    |   |   |-- demo.css
+    |   |   |-- style.css
+    |   |-- Daily Tips
+    |   |   |-- adding-placeholder-content-to-your-javascript-web-app.html
+    |   |   |-- Getting all query string values from a URL with vanilla JavaScript.html
+    |   |   |-- URLSearchParams.html
+    |   |-- HTML
+    |   |   |-- app.css
+    |   |   |-- boxShadow.html
+    |   |   |-- Database.html
+    |   |   |-- solt.html
+    |   |-- js
+    |   |   |-- advanced_function.js
+    |   |   |-- compare_version.js
+    |   |   |-- create-100-arrary.js
+    |   |   |-- find_public_word_of_string.js
+    |   |   |-- getCollectionWeight.js
+    |   |   |-- getQueryString.js
+    |   |   |-- my.js
+    |   |   |-- test.js
+    |   |   |-- timer.js
+    |   |   |-- type.js
+    |   |   |-- Http
+    |   |   |   |-- ajax.js
+    |   |   |   |-- data.json
+    |   |   |   |-- promise.html
+    |   |   |-- OOP
+    |   |       |-- inheritance.html
+    |   |       |-- Object.create.html
+    |   |       |-- Object.prototype .html
+    |   |       |-- prototype.html
+    |   |-- node
+    |   |   |-- note.md
+    |   |   |-- express
+    |   |   |   |-- MongoDB.md
+    |   |   |   |-- resource.md
+    |   |   |-- fs
+    |   |   |   |-- fs.js
+    |   |   |   |-- output.txt
+    |   |   |   |-- sample.txt
+    |   |   |-- sql
+    |   |       |-- access_log.sql
+    |   |       |-- apps.sql
+    |   |       |-- websites.sql
+    |   |-- page
+    |   |   |-- clip.html
+    |   |   |-- count.html
+    |   |   |-- index.html
+    |   |   |-- Jiugongge.html
+    |   |   |-- keys.html
+    |   |   |-- Object.defineProperty.html
+    |   |   |-- question.html
+    |   |   |-- sort.html
+    |   |   |-- status.html
+    |   |   |-- type.html
+    |   |   |-- bootstrap
+    |   |       |-- index.html
+    |   |       |-- css
+    |   |           |-- index.css
+    |   |-- promise
+    |   |   |-- promise.js
+    |   |   |-- then.js
+    |   |-- table
+    |   |   |-- bs-example.css
+    |   |   |-- index.html
+    |   |-- tool
+    |       |-- deep_clone.js
+    |       |-- getRoutes.js
+    |       |-- tool.js
+    |       |-- _mm.js
+    |-- underscore
+        |-- 1.html
+        |-- debounce.js
+```
+
+</details>
+
+## HTML&CSS
+* HTML&CSS
+  - [对Web标准的理解]()
+  - [浏览器内核差异](http://www.iefans.net/liulanqi-neihe-jiexi/)
+  - [兼容性](CSS_Secrets/background.html)  
+  - [hack]()
+  - [CSS基本功:盒子模型](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model)
+  - [布局](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout)
+  - [盒子模型]()
+  - [选择器优先级](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity)
+  - [HTML5]()
+  - [CSS3]()
+  - [Flexbox](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout)
+  - [尽量减少代码重复](CSS_Secrets/Reduce_code.html)
+  - [背景与边框](CSS_Secrets/background.html)
+
+
+## JavaScript：
+* JavaScript
+  - [MDN-Javascript收藏](https://developer.mozilla.org/zh-CN/docs/Web/MDN-Javascript收藏)
+  - [数据类型](type-of-data/type.md)
+  - [JavaScript 数据类型和数据结构](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Data_structures)
+  - [JavaScript 中的相等性判断](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+  - [运算](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators)
+  - [对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects)
+  - [Function](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function)
+  - [继承]()
+  - [闭包](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures)
+  - [作用域]()
+  - [原型链](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+  - [事件](https://developer.mozilla.org/zh-CN/docs/Web/Events)
+  - [RegExp]()
+  - [JSON](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+  - [Ajax]()
+  - [DOM](https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model)
+  - [BOM]()
+  - [内存泄漏]()
+  - [跨域]()
+  - [异步装载]()
+  - [模板引擎]()
+  - [前端MVC]()
+  - [路由]()
+  - [模块化]()
+  - [Canvas](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial)
+  - [ECMAScript 6](http://es6.ruanyifeng.com/)
+  - [Nodejs](http://nodejs.cn/api/)
+
+## 其他：
+  - [移动端]()
+  - [响应式]()
+
+>WEB标准不是某一个标准，而是一系列标准的集合。网页主要由三部分组成：结构（Structure）、表现（Presentation）和行为（Behavior）。对应的标准也分三方面：结构化标准语言主要包括XHTML和XML，表现标准语言主要包括CSS，行为标准主要包括对象模型（如W3C DOM）、ECMAScript等。这些标准大部分由万维网联盟（起草和发布，也有一些是其他标准组织制订的标准，比如ECMA（European Computer Manufacturers Association）的ECMAScript标准
