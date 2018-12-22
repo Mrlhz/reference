@@ -43,5 +43,45 @@
         <div class="flex-item">3</div>
       </div>
     </section>
+
+    <script>
+      (function () {
+        var root = this;
+
+        var _ = {};
+
+        root._ = _;
+
+        var isArrayLike = function(collection) {
+        var length = collection.length;
+        return typeof length == 'number' && length >= 0 && length <= MAX_ARRAY_INDEX;
+        };
+
+        // 在这里添加自己的方法
+        _.each = function (obj, callback) {
+          var length, i = 0;
+
+          if (isArrayLike(obj)) {
+            length = obj.length;
+            for (; i < length; i++) {
+              if (callback.call(obj[i], obj[i], i) === false) {
+                break;
+              }
+            }
+          } else {
+            for (i in obj) {
+              if (callback.call(obj[i], obj[i], i) === false) {
+                break;
+              }
+            }
+          }
+
+          return obj;
+        }
+
+      })()
+
+      _.each({one: 1, two: 2, three: 3},function(n){ console.log(n); })
+    </script>
   </body>
 </html>

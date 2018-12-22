@@ -1,7 +1,7 @@
 # web
 
 <details>
-<summary>工厂模式</summary>
+<summary>目录文件</summary>
 
 ```
 |-- web
@@ -202,7 +202,8 @@
   - [Nodejs](http://nodejs.cn/api/)
 
 ## 其他：
-  - [移动端]()
+  - [移动端](http://lalala.lol/2015/10/15/development-of-resource-integration-in-mobile-terminal/)
   - [响应式]()
+  - [HTTP 响应代码](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status)
 
 >WEB标准不是某一个标准，而是一系列标准的集合。网页主要由三部分组成：结构（Structure）、表现（Presentation）和行为（Behavior）。对应的标准也分三方面：结构化标准语言主要包括XHTML和XML，表现标准语言主要包括CSS，行为标准主要包括对象模型（如W3C DOM）、ECMAScript等。这些标准大部分由万维网联盟（起草和发布，也有一些是其他标准组织制订的标准，比如ECMA（European Computer Manufacturers Association）的ECMAScript标准
