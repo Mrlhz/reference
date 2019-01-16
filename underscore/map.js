@@ -26,10 +26,15 @@
   var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
   var nativeIsArray = Array.isArray;
   var nativeKeys = Object.keys;
+  var hasOwnProperty = Object.prototype.hasOwnProperty;
 
   var isArrayLike = function(collection) {
     var length = collection.length;
     return typeof length == "number" && length > 0 && length < MAX_ARRAY_INDEX;
+  };
+
+  _.has = function(obj, key) {
+    return obj != null && hasOwnProperty.call(obj, key);
   };
 
   _.keys = function(obj) {
