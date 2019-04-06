@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>面试经历之Promise红绿灯的实现</title>
+  <style>
+    #traffic-light {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- https://zxpsuper.github.io/2017/09/26/Promise/ -->
+  <p>我们现在要实现一个红绿灯，把一个圆形div按照绿色3秒，黄色1秒，红色2秒循环改变背景色，你会怎样编写这个代码呢？</p>
+  <div id="traffic-light"></div>
+  <script>
+    function sleep(duration) {
+      return new Promise(function (resolve) {
+        setTimeout(resolve, duration);
+      })
+    }
+    async function changeColor(duration, color) {
+      document.getElementById("traffic-light").style.background = color;
+      await sleep(duration);
+
+    }
+    async function main() {
+      while (true) {
+        await changeColor(3000, "green");
+        await changeColor(1000, "yellow");
+        await changeColor(2000, "red");
+      }
+    }
+    // main()
+
+    const classifyArray = function (arr) {
+      return arr.reduce((acc, cur) => {
+        if (!acc[cur - 1]) acc[cur - 1] = []
+        acc[cur - 1].push(cur)
+        return acc;
+      }, [])
+    }
+
+    classifyArray([0,0,1,1,1,1,2,2,2,3])
+  </script>
+</body>
+
+</html>

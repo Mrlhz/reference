@@ -138,3 +138,42 @@ let newPoints = points.map(pair => {
 const newPonint = points.map(([x, y]) => {
   return { x, y };
 });
+
+// [1,1,1,1,2,2,2,3] => [[1,1,1,1],[2,2,2],[3]]
+
+
+const classifyArray = function (arr) {
+  let result = [];
+  const o = arr.reduce( (acc, cur) => {
+    acc[cur] ? acc[cur] ++: acc[cur] = 1;
+    return acc;
+  },{})
+  for (const key in o) {
+    if (o.hasOwnProperty(key)) {
+      let ele = o[key];
+      result.push(new Array(ele).fill(Number(key)));
+    }
+  }
+  return result;
+}
+
+const classifyArray = function (arr) {
+  let result = [];
+  const unique = Array.from(new Set(arr));
+  const o = arr.reduce( (acc, cur) => {
+        acc[cur] ? acc[cur] ++: acc[cur] = 1;
+        return acc;
+      },{})
+  for (let i = 0, len = arr.length; i < len; i++) {
+
+  }
+  return result
+}
+
+const classifyArray = function(arr) {
+  arr.reduce((acc, cur) => {
+    if (!acc[cur-1]) acc[cur-1] = []
+    acc[cur-1].push(cur)
+    return acc;
+  }, [])  
+}
