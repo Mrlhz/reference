@@ -16,3 +16,9 @@
 10.	DocumentType	为文档实体提供接口
 11.	DocumentFragment	表示邻接节点和它们的子树。
 12.	Notation	代表一个符号在DTD中的声明
+
+
+### jQuery源码解析
+
+- [jQuery源码解析（架构与依赖模块）](https://www.imooc.com/learn/172)
+- [jQuery源码解析（DOM与核心模块）](https://www.imooc.com/learn/222)

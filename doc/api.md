@@ -1,5 +1,7 @@
 # API接口
 
+> 没有apikey访问不了
+
 ### 获取电影Top250
 
 >example
