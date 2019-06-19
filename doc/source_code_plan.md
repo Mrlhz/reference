@@ -14,6 +14,7 @@
 
 ## jQuery
 
+- [jQuery源码分析系列](https://github.com/JsAaron/jQuery) https://www.cnblogs.com/aaronjs/p/3279314.html
 - [jQuery技术内幕：深入解析jQuery架构设计与实现原理](https://read.douban.com/ebook/15353322/)
 - [jQuery源码分析系列](https://www.cnblogs.com/aaronjs/p/3279314.html)
 - [jQuery源码解析（架构与依赖模块）](https://www.imooc.com/learn/172)
