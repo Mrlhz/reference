@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>防抖与节流</title>
+  <style>
+    #container {
+      width: 100%;
+      height: 200px;
+      line-height: 200px;
+      text-align: center;
+      color: #fff;
+      background-color: #444;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  The terms Internet and World Wide Web are often used without much distinction. However, the two are not the same. 
+The <dfn>Internet</dfn> is a global system of interconnected computer networks.
+In contrast, the <dfn>World Wide Web</dfn> is a global collection of documents and other resources, linked by hyperlinks and URIs. 
+  <script>
+    // function debounce(fn, wait) {
+    //   var timeout;
+    //   return function() {
+    //     var context = this
+    //     var args = arguments
+    //     console.log('1', this);
+    //     clearTimeout(timeout)
+    //     timeout = setTimeout(function(){
+    //       fn.apply(context, args)
+    //     }, wait)
+    //   }
+    // }
+
+    // var count = 1;
+    // var container = document.getElementById('container');
+
+    // function getUserAction() {
+    //   console.log(this);
+
+    //   container.innerHTML = count++;
+    // };
+
+    // container.onmousemove = debounce(getUserAction, 100);
+
+    function debounce(fn, wait) {
+      let timeout
+      return function () {
+        const context = this
+        const args = arguments
+        if (timeout) clearTimeout(timeout)
+        timeout = setTimeout(function () {
+          fn.apply(context, args)
+        }, wait)
+      }
+    }
+
+    const throttle = (fn, wait) => {
+      let inThrottle, lastFn, lastTime;
+      return function () {
+        const context = this,
+          args = arguments;
+        if (!inThrottle) {
+          fn.apply(context, args);
+          lastTime = Date.now();
+          inThrottle = true;
+        } else {
+          clearTimeout(lastFn);
+          lastFn = setTimeout(function () {
+            if (Date.now() - lastTime >= wait) {
+              fn.apply(context, args);
+              lastTime = Date.now();
+            }
+          }, Math.max(wait - (Date.now() - lastTime), 0));
+        }
+      };
+    };
+
+    // test
+
+    window.onresize = debounce(function () {
+      console.log(666);
+    }, 100)
+
+    let container = document.getElementById('container')
+
+    container.onmousemove = throttle(function(){
+      console.log(6)
+    }, 500)
+
+    // container.onmousemove = function(){
+    //   console.log(6)
+    // }
+
+    // window.addEventListener(
+    //   'resize',
+    //   throttle(function (evt) {
+    //     console.log(window.innerWidth);
+    //     console.log(window.innerHeight);
+    //   }, 250)
+    // ); // Will log the window dimensions at most every 250ms
+  </script>
+</body>
+
+</html>

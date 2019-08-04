@@ -135,11 +135,52 @@ const fn = (value) => {
   
 }
 
-fn('112') // 输出 [1， 11， 112]
+// fn('112') // 输出 [1， 11， 112]
 
-function fn(id, list) {
-  const match = list.find(item => item.id === id);
-  if (match) return [id];
-  const sub = list.find(item => id.startsWith(item.id));
-  return [sub.id].concat(fn(id, sub.children));
+// function fn(id, list) {
+//   const match = list.find(item => item.id === id);
+//   if (match) return [id];
+//   const sub = list.find(item => id.startsWith(item.id));
+//   return [sub.id].concat(fn(id, sub.children));
+// }
+
+let tree = {
+  name: 'A',
+  value: 4,
+  children: [
+      {
+          name: 'B', value: 7,
+          children: [{name: 'C', value: 9, children: []}]
+      },
+      {
+          name: 'D', value: 11,
+          children: [{name: 'E', value: 9, children: []}]
+      },
+      {name: 'F', value: 55, children: []},
+      {
+          name: 'G', value: 65,
+          children: [
+              {name: 'H', value: 21, children: []},
+              {name: 'I', value: 33, children: []}
+          ]
+      }
+  ]
+};
+
+// https://ruby-china.org/topics/33768
+function find(nodes, name) {
+  if (nodes.value === name) {
+    return nodes
+  } else {
+    for (let i = 0; i < nodes.children.length; i++) {
+      console.log(nodes.children[i]);
+      let value = find(nodes.children[i], name)
+      if(value !== null) {
+        return value
+      }
+    }
+    return null
+  }
 }
+
+find(tree, 21)

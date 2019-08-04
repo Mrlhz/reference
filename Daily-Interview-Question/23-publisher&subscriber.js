@@ -78,5 +78,3 @@ salesOffices.trigger('squareMeter88', 2000000); // 输出：2000000
 console.log(salesOffices.clientList);
 
 console.log('-------------------------------------------------------------------------');
-
-

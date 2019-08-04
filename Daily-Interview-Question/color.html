@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>高级感的配色方案参考 via： ocean.ui</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .bg1 {
+      background-color: #006270;
+    }
+
+    .bg2 {
+      background-color: #009394;
+    }
+
+    .bg3 {
+      background-color: #00E0C7;
+    }
+
+    .bg4 {
+      background-color: #FFFFFF;
+    }
+
+    .box-wrap {
+      display: flex;
+      flex-direction: column;
+      width: 800px;
+      margin: 40px auto;
+      padding: 10px;
+      background-color: #2A3950;
+      color: #fff;
+    }
+
+    .title,
+    .sub-title {
+      display: flex;
+      justify-content: center;
+    }
+
+    .title{
+      color: #F9FCFB;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .sub-title{
+      color: #A5AFBE;
+      font-size: 12px;
+    }
+    .box {
+      width: 800px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .square {
+      width: 120px;
+      height: 280px;
+      margin: 10px 12px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- <div class="box-wrap">
+      <div class="title">Fairy</div>
+      <div class="sub-title">Color Palette</div>
+      <div class="box">
+        <div class="square bg1"></div>
+        <div class="square bg2"></div>
+        <div class="square bg3"></div>
+        <div class="square bg4"></div>
+      </div>
+    </div> -->
+  </div>
+  <script>
+    let colors = [{
+      title: 'Granite',
+      subTitle: 'Color Palette',
+      color: ['#3B7B9A', '#70AFCE', '#A5DEF1', '#FFFFFF']
+    },
+    {
+      title: 'Tangerine',
+      subTitle: 'Color Palette',
+      color: ['#FF6D00', '#FF9201', '#FFAB40', '#FFD180']
+    },
+    {
+      title: 'Cooler',
+      subTitle: 'Color Palette',
+      color: ['#4BB6F4', '#1F9CE4', '#3E60C1', '#5983FC']
+    },
+    {
+      title: 'Fairy',
+      subTitle: 'Color Palette',
+      color: ['#A163F7', '#6F88FC', '#45E3FF', '#FF7582']
+    },
+    {
+      title: 'Slate',
+      subTitle: 'Color Palette',
+      color: ['#587FA7', '#508DA3', '#A5DEF1', '#FFFFFF']
+    },
+    {
+      title: 'Docks',
+      subTitle: 'Color Palette',
+      color: ['#435D6C', '#EF4B4C', '#3D619B', '#E9E9EB']
+    },
+    {
+      title: 'Haze',
+      subTitle: 'Color Palette',
+      color: ['#DF6BAE', '#248DB6', '#83B8FF', '#C6CDFF']
+    },
+    {
+      title: 'Sunset',
+      subTitle: 'Color Palette',
+      color: ['#355c7d', '#725A7A', '#C56C86', '#FF7582']
+    },
+    {
+      title: 'Moss',
+      subTitle: 'Color Palette',
+      color: ['#0D6270', '#009394', '#00E0C7', '#FFFFFF']
+    }]
+
+    function template({title, subTitle, color} = data) {
+      let colors = color.map( (c) => {
+        return `<div class="square" style="background-color: ${c}"></div>`
+      }).join('')
+      let result =
+        `
+        <div class="box-wrap">
+          <div class="title">${title}</div>
+          <div class="sub-title">${subTitle}</div>
+          <div class="box">${colors}</div>
+        </div>
+        `
+    return result
+    }
+
+    let tem = ''
+
+    colors.forEach( (color) => {
+      tem += template(color)
+      document.querySelector('.container').innerHTML = tem
+    })
+  </script>
+</body>
+
+</html>

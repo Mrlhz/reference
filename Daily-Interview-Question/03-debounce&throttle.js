@@ -28,7 +28,7 @@ function debounce(fn, wait) {
 
 const debounce = (fn, ms = 0) => {
   let timeoutId
-  return function(...args) {
+  return function (...args) {
     clearTimeout(timeoutId)
     timeoutId = setTimeout(() => fn.apply(this, args), ms)
   }
@@ -52,5 +52,22 @@ window.addEventListener(
  * @param {number} wait
  */
 function throttle(func, wait) {
+
+}
+
+function throttle(func, wait) {
+  let context
+  let args
+  let previous
+
+  return function () {
+    let now = Date.now()
+    context = this
+    args = arguments
+    if (now - previous > wait) {
+      func.apply(context, args)
+      previous = now
+    }
+  }
 
 }
