@@ -4,5 +4,15 @@ let arr2 = ['A', 'B', 'C', 'D']
 
 
 function concat(arr1, arr2) {
-  
+  let temArr = arr2.map((item) => item + 3)
+  let res = temArr.concat(arr1).sort().map((item) => {
+    if (item[1] === '3') {
+      return item[0]
+    }
+    return item
+  })
+  console.log(res);
+  return res
 }
+
+concat(arr1, arr2)
