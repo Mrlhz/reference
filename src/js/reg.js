@@ -34,6 +34,13 @@ function matchATagValue(str) {
 }
 
 // TODO 标签中不能有空格  <a></a >
+/**
+ * @description 获取HTML标签
+ *
+ * @param {String} str
+ * @param {String} tag
+ * @returns
+ */
 function matchTagsValue(str, tag) {
   tag = tag || 'a'
   var re = new RegExp(`<${tag}[^>]*href=['"]([^'"]*)['"][^>]*>(.*?)<\\/${tag}>`)
@@ -78,3 +85,97 @@ function thousandSeparator(str) {
 thousandSeparator('1234567890') // 1,234,567,890
 thousandSeparator('123456789.1369') // 123,456,789.1,369
 
+
+var r = /([\?&].+=.+)/
+
+
+// http://www.ituring.com.cn/article/210470
+function testNum(str) {
+
+  let stack = str.split(',').concat(-1)
+  console.log(stack);
+  let next = Number(stack[0])
+
+  let res = []
+
+  while (stack.length) {
+    if (next + 1 === Number(stack[0])) {
+      res.push('@' + next)
+    } else {
+      res.push(next)
+    }
+    next = Number(stack.shift())
+  }
+
+  console.log(res);
+}
+
+testNum('1,2,3,5,7,8,10')
+
+const obj = { foo: 'bar', baz: 42 };
+// [ ['foo', 'bar'], ['baz', 42] ]
+function entries(obj) {
+  let keys = Object.keys(obj)
+  let len = keys.length
+
+  let arr = new Array(len)
+
+  for (let i = 0; i < len; i++) {
+    arr[i] = [keys[i], obj[keys[i]]]
+  }
+  console.log(arr);
+  return arr
+}
+
+if (!Object.entries)
+  Object.entries = function( obj ){
+    var ownProps = Object.keys( obj ),
+        i = ownProps.length,
+        resArray = new Array(i); // preallocate the Array
+    while (i--)
+      resArray[i] = [ownProps[i], obj[ownProps[i]]];
+    
+    return resArray;
+  };
+
+// entries(obj)
+
+// function convert(list) {
+//   let res = list.concat().filter( (el) => {
+//     return el.parentId === 0
+//   })
+//   console.log(res);
+
+
+//   return res
+// }
+
+let list =[
+  {id:8,name:'部门H',parentId:4},
+  {id:1,name:'部门A',parentId:0},
+  {id:2,name:'部门B',parentId:0},
+  {id:3,name:'部门C',parentId:1},
+  {id:4,name:'部门D',parentId:1},
+  {id:5,name:'部门E',parentId:2},
+  {id:6,name:'部门F',parentId:3},
+  {id:7,name:'部门G',parentId:2}
+];
+
+function convert(list) {
+	const res = []
+	const map = list.reduce((res, v) => (res[v.id] = v, res), {})
+	for (const item of list) {
+		if (item.parentId === 0) {
+			res.push(item)
+			continue
+		}
+		if (item.parentId in map) {
+			const parent = map[item.parentId]
+			parent.children = parent.children || []
+			parent.children.push(item)
+		}
+	}
+	return res
+}
+
+console.log(convert(list));
