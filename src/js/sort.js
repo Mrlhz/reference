@@ -1,0 +1,118 @@
+var downurls = "迅雷下载洪武三十二[国语DVD]EP01.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExMTcvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAwMS5ybXZiWlo=#洪武三十二[国语DVD]EP02.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExMTcvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAwMi5ybXZiWlo=#洪武三十二[国语DVD]EP03.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExMTcvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAwMy5ybXZiWlo=#洪武三十二[国语DVD]EP04.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExMjAvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAwNC5ybXZiWlo=#洪武三十二[国语DVD]EP05.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExMjEvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAwNS5ybXZiWlo=#洪武三十二[国语DVD]EP06.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExMjUvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAwNi5ybXZiWlo=#洪武三十二[国语DVD]EP07.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExMjcvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAwNy5ybXZiWlo=#洪武三十二[国语DVD]EP08.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExMjkvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAwOC5ybXZiWlo=#洪武三十二[国语DVD]EP09.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExMzAvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAwOS5ybXZiWlo=#洪武三十二[国语DVD]EP10.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExMzcvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAxMC5ybXZiWlo=#洪武三十二[国语DVD]EP11.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExMzcvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAxMS5ybXZiWlo=#洪武三十二[国语DVD]EP12.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6NTExOTIvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAxMi5ybXZiWlo=#洪武三十二[国语DVD]EP13.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6OTE1MC8lNUIlRTglQkYlODUlRTklOUIlQjclRTQlQjglOEIlRTglQkQlQkR3d3cuWHVuYm8uQ2MlNUQlRTYlQjQlQUElRTYlQUQlQTYlRTQlQjglODklRTUlOEQlODElRTQlQkElOEMlNUIlRTUlOUIlQkQlRTglQUYlQUREVkQlNURFUDEzLnJtdmJaWg==#洪武三十二[国语DVD]EP14.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6NTExOTUvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAxNC5ybXZiWlo=#洪武三十二[国语DVD]EP15.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExNDQvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAxNS5ybXZiWlo=#洪武三十二[国语DVD]EP16.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExNDYvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAxNi5ybXZiWlo=#洪武三十二[国语DVD]EP17.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExNTAvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAxNy5ybXZiWlo=#洪武三十二[国语DVD]EP18.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bC5xcWJvLmNjOjMzMzI4LyU1QiVFOCVCRiU4NSVFOSU5QiVCNyVFNCVCOCU4QiVFOCVCRCVCRFd3dy5RUWJvLmNDJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAxOC5ybXZiWlo=#洪武三十二[国语DVD]EP19.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExNTEvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAxOS5ybXZiWlo=#洪武三十二[国语DVD]EP20.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExNTMvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAyMC5ybXZiWlo=#洪武三十二[国语DVD]EP21.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExNTQvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAyMS5ybXZiWlo=#洪武三十二[国语DVD]EP22.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExNTYvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAyMi5ybXZiWlo=#洪武三十二[国语DVD]EP23.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExNTcvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAyMy5ybXZiWlo=#洪武三十二[国语DVD]EP24.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExNTgvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAyNC5ybXZiWlo=#洪武三十二[国语DVD]EP25.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExNTkvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAyNS5ybXZiWlo=#洪武三十二[国语DVD]EP26.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExNjIvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAyNi5ybXZiWlo=#洪武三十二[国语DVD]EP27.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6OTE2OS8lNUIlRTglQkYlODUlRTklOUIlQjclRTQlQjglOEIlRTglQkQlQkR3d3cuWHVuYm8uQ2MlNUQlRTYlQjQlQUElRTYlQUQlQTYlRTQlQjglODklRTUlOEQlODElRTQlQkElOEMlNUIlRTUlOUIlQkQlRTglQUYlQUREVkQlNURFUDI3LnJtdmJaWg==#洪武三十二[国语DVD]EP28.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bC5xcWJvLmNjOjI2NTEyLyU1QiVFOCVCRiU4NSVFOSU5QiVCNyVFNCVCOCU4QiVFOCVCRCVCRFd3dy5RUWJvLmNDJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAyOC5ybXZiWlo=#洪武三十二[国语DVD]EP29.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExNjUvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAyOS5ybXZiWlo=#洪武三十二[国语DVD]EP30.rmvb$thunder://QUFmdHA6Ly90djp0dkB4bGMueHVuYm8uY2M6MTExNjcvJTVCJUU4JUJGJTg1JUU5JTlCJUI3JUU0JUI4JThCJUU4JUJEJUJEd3d3Llh1bmJvLkNjJTVEJUU2JUI0JUFBJUU2JUFEJUE2JUU0JUI4JTg5JUU1JThEJTgxJUU0JUJBJThDJTVCJUU1JTlCJUJEJUU4JUFGJUFERFZEJTVERVAzMC5ybXZiWlo=#";
+// var downarr = downurls.split('#');
+// var downinfo, ys_url, thunder_url, qq_url, yb_url, str;
+// for (i = 0; i < downarr.length - 1; i++) {
+//   downinfo = downarr[i].split('$');
+//   ys_url = urlconvert(downinfo[1], 'ys');
+//   thunder_url = urlconvert(ys_url, 'xl');
+//   qq_url = urlconvert(ys_url, 'qq');
+//   yb_url = thunder_url;
+//   if (ys_url.indexOf('ed2k') > -1 || ys_url.indexOf('magnet') > -1) {
+//     yb_url = encodeURIComponent(decodeURIComponent(ys_url));
+//   }
+//   str = '<LI id="li2_' + downinfo[0] + '"><DIV class="adds"><INPUT name="CopyAddr2" class="2addr" style="VERTICAL-ALIGN: middle" type="checkbox" value="' + thunder_url + '"><DIV><SPAN id="s2p' + downinfo[0] + '"><A title="' + downinfo[0] + '" href="' + thunder_url + '" target="_self">' + downinfo[0] + '</A></SPAN><INPUT id="lin2k' + downinfo[0] + '" style="WIDTH: 445px; VERTICAL-ALIGN: middle" type="text" value="' + thunder_url + '"></DIV></DIV><DIV class="dwon_xl"><a class="dwon2" id="2thUrlid' + downinfo[0] + '" href="#" thunderHref="' + thunder_url + '" thunderPid="38042" thunderResTitle="" onClick="return xunbotask(this)" oncontextmenu="ThunderNetwork_SetHref_b(this)" class="thunder">迅雷下载</a></DIV><DIV class="dwon_tx"><a target="_self" href="javascript:void(0);return false;" qhref="' + qq_url + '" onclick="XFLIB.startDownload(this,event,21590)" oncontextmenu="OnContextClick(this, event)" class="thunder">旋风下载</a> </DIV><DIV class=dwon_y><A title="迅雷影音" onclick="javascript:start(\'' + thunder_url + '\');" href="#" target="_self">迅雷影音</A></DIV><DIV class="down_z"><A title="源地址" href="' + thunder_url + '" target=_blank>源地址</A></DIV></LI>';
+//   document.write(str);
+// }
+
+var urls = downurls.split('#');
+var result = [];
+urls.forEach((ele) => {
+  var item = ele.split('$')[1] ? ele.split('$')[1] : '';
+  item ? result.push(item) : ''
+  document.write(item + '\n')
+})
+
+// https://www.993dy.com/vod-detail-id-10541.html
+
+function randomArr(arr) {
+  return arr.sort(function (a, b) {
+    return Math.random() - 0.5;
+  });
+}
+
+function isEvenString1(str) {
+  if (!str) return 'need str!';
+  var len = str.length;
+  if (len < 2 || len > 100) return 'str length(2 ≤ length ≤ 200)';
+  if (len % 2 === 0) {
+    var middleIndex = len / 2;
+    if (str.substring(0, middleIndex) === str.substring(middleIndex, len)) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return false;
+  }
+}
+
+function isEvenString(str) {
+  // 'need str or not blank character!'
+  if (!str) return false;
+  var len = str.length;
+  // 'str length(2 ≤ length ≤ 200)'
+  if (len < 2 || len > 100) return false;
+
+  if (len % 2 === 0) {
+    var middleIndex = len / 2;
+    if (str.substring(0, middleIndex) === str.substring(middleIndex, len)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// isEvenString('xyzxyz')
+// isEvenString('aaaaaa')
+
+// isEvenString('ababab')
+// isEvenString('xyzxy')
+
+
+function deleteStr(str) {
+  if(!str || str.length < 2) return 0;
+  var newStr = str.substring(0, str.length - 1)
+  if (isEvenString(newStr)) {
+    return newStr.length;
+  } else {
+    return deleteStr(newStr);
+  }
+}
+
+// 绿色3秒，黄色1秒，红色2秒循环改变
+function sleep(duration) {
+  return new Promise(function(resolve, reject) {
+      setTimeout(resolve, duration);
+  })
+}
+
+async function trafficLight(duration, color){
+  console.log(color, new Date().toTimeString());
+  await sleep(duration);
+}
+
+async function main(){
+  while(true) {
+    await trafficLight(3000, 'green');
+    await trafficLight(1000, 'yello');
+    await trafficLight(2000, 'red');
+  }
+}
+
+function bubbleSort1(array){ 
+  var length = array.length;           //{1} 
+  for (var i=0; i<length; i++){        //{2} 
+      for (var j=0; j<length-1; j++ ){ //{3} 
+          if (array[j] > array[j+1]){  //{4} 
+              swap(j, j+1);            //{5}
+              console.log(array);
+          } 
+      } 
+  } 
+};
+
+var swap = function(index1, index2){ 
+  var aux = array[index1]; 
+  array[index1] = array[index2]; 
+  array[index2] = aux; 
+};

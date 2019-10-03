@@ -48,20 +48,3 @@ new Promise(resolve => {
   .then(value => {
     console.log(`${value} world -- ${new Date().toLocaleString()}`)
   })
-
-class Time {
-  formatTime(date) {
-    const hour = date.getHours()
-    const minute = date.getMinutes()
-    const second = date.getSeconds()
-    return [hour, minute, second].map(this.formatNumber).join(':')
-  }
-
-  formatNumber(n) {
-    n = n.toString()
-    return n[1] ? n : '0' + n
-  }
-}
-
-const t = new Time()
-t.formatTime(new Date())

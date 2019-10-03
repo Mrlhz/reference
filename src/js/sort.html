@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>排序</title>
+  <style>
+    .wrap {
+      display: flex;
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: 400;
+      width: 60px;
+      height: 60px;
+      margin: 5px;
+    }
+
+    .box.blue {
+      background-color: #ADD6E6;
+      color: #fff;
+    }
+
+    .box.green {
+      background-color: #0D8000;
+      color: #fff;
+    }
+
+    .box.red {
+      background-color: #DA2A38;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+  </div>
+  <script>
+    function sleep(duration) {
+      return new Promise(function (resolve, reject) {
+        setTimeout(resolve, duration);
+      })
+    }
+
+    async function bubbleSort(arr) {
+      var length = arr.length;
+      for (let i = 0; i < length; i++) {
+        for (let j = 0; j < length - 1 - i; j++) {
+          // console.log(arr, 'current:', arr[j], arr[j + 1]);
+          // let currentIndex = j;
+          // console.log(currentIndex, currentIndex + 1, 'index');
+          Array.from(document.querySelectorAll('.box')).forEach((ele)=>{
+              ele.classList.remove('green');
+          });
+          document.querySelector(`.box[index=index${j}]`).classList.add('green');
+          document.querySelector(`.box[index=index${j+1}]`).classList.add('green');
+          if (arr[j] > arr[j + 1]) {
+            // let current = document.querySelector(`.box[index=index${j}]`).innerHTML;
+            // console.log(current);
+            await sleep(1000);
+            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            render(arr);
+          };
+        }
+        // 外循环结束一次
+        console.log('---', arr, array[length - i - 1]);
+        // render(arr)
+        // document.querySelector(`.box[index=index${length - i - 1}]`).classList.add('blue');
+      }
+      console.log('res', arr);
+      Array.from(document.querySelectorAll('.box')).forEach((ele)=>{
+              ele.classList.remove('green');
+          });
+    }
+    var array = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
+    // var array = [5,4,3,2,1]
+
+    function render(array) {
+      let str = ''
+      array.forEach((ele, index) => {
+        str += `<div class="box" index=index${index}>${ele}</div>`;
+      });
+      document.querySelector('.wrap').innerHTML = (str);
+    }
+
+    render(array)
+    bubbleSort(array)
+  </script>
+</body>
+
+</html>

@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+// https://github.com/JohnByrneRepo/mddir
+
 var fs = require('fs');
 var path = require('path');
 
