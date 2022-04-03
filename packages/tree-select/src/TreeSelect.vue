@@ -30,8 +30,7 @@
 <script>
 import TreeNode from './TreeNode.vue'
 import Node from './model/node'
-import { hasChildren } from './model/node'
-import { getChildState } from '@/utils/flattenTree'
+import { hasChildren, defaultProps } from './model/node'
 
 export default {
   name: 'TreeSelect',
@@ -49,13 +48,6 @@ export default {
   },
   computed: {
     computeProps() {
-      const defaultProps = {
-        idKey: 'id',
-        pIdKey: 'pId',
-        label: 'label',
-        rootId: null,
-        childrenKey: 'children',
-      }
       return Object.assign({}, defaultProps, this.props)
     },
   },
@@ -86,11 +78,13 @@ export default {
       this.flattenData = flattenData
       this.dataSet = dataSet
       console.timeEnd('init')
-      this.tabs[0] = {
-        id: 'root',
-        [label]: '首页',
-        [childrenKey]: this.cloneData,
-      }
+      this.tabs = [
+        {
+          id: 'root',
+          [label]: '首页',
+          [childrenKey]: this.cloneData,
+        },
+      ]
     },
     expandNode(node) {
       if (!hasChildren(node, this.computeProps)) return
@@ -114,39 +108,10 @@ export default {
         node.indeterminate = false
       }
       if (hasChildren(node, this.computeProps)) {
-        this.setChildrenCheck(node[childrenKey], checked)
+        this.store._setChildrenCheck(node[childrenKey], checked)
       }
       const nodes = this.getParentNodes(node, this.computeProps)
-      this.setHalfCheck(nodes, checked)
-    },
-    setChildrenCheck(nodes, checked) {
-      const { childrenKey } = this.computeProps
-      for (let i = 0, l = nodes.length; i < l; i++) {
-        const node = nodes[i]
-        this.$set(node, 'checked', checked)
-        checked && this.$set(node, 'indeterminate', false)
-        if (hasChildren(node, this.computeProps)) {
-          this.setChildrenCheck(node[childrenKey], checked)
-        }
-      }
-    },
-    setHalfCheck(nodes, checked) {
-      const { childrenKey } = this.computeProps
-      console.log(nodes, checked)
-      const sortNodes = nodes.sort((a, b) => b.level - a.level) // 子节点在前
-      for (let i = 0, l = sortNodes.length; i < l; i++) {
-        const node = sortNodes[i]
-        node.checked = false
-        node.indeterminate = false
-      }
-      console.log('sortNodes', sortNodes)
-      for (let i = 0, l = sortNodes.length; i < l; i++) {
-        const node = sortNodes[i]
-        const { half, all, none } = getChildState(node[childrenKey])
-        console.log({ half, all, none, name: node.name, id: node.id })
-        node.checked = all
-        node.indeterminate = half
-      }
+      this.store._setHalfCheck(nodes, checked)
     },
     _setHalfCheck(nodes, checked) {
       const { childrenKey } = this.computeProps
@@ -173,10 +138,10 @@ export default {
     },
     // API
     getCheckedNodes() {
-      return this.flattenData.filter((node) => node.checked)
+      return this.store._getCheckedNodes()
     },
     getHalfCheckedNodes() {
-      return this.flattenData.filter((node) => node.indeterminate)
+      return this.store._getHalfCheckedNodes()
     },
     setCheckedKeys(keys = []) {
       this.store._setCheckedKeys(keys)

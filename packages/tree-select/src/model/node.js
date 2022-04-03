@@ -5,12 +5,20 @@ export const hasChildren = (node = {}, { childrenKey } = {}) => {
   return Array.isArray(node[childrenKey]) && node[childrenKey].length
 }
 
+export const defaultProps = {
+  idKey: 'id',
+  pIdKey: 'pId',
+  label: 'label',
+  rootId: null,
+  childrenKey: 'children',
+}
+
 /**
  * @reference https://github.com/ElemeFE/element/blob/dev/packages/tree/src/model/node.js
  */
 export default class Node {
   constructor(options) {
-    const { props, data } = options
+    const { props = defaultProps, data } = options
     this.setting = props
     this.sourceData = data
     this.cloneData = deepCopy(data)
@@ -87,7 +95,7 @@ export default class Node {
     return nodes
   }
 
-  _setCheckedKeys(keys) {
+  _setCheckedKeys(keys = []) {
     this.flattenData.forEach((node) => {
       node.checked = false
       node.indeterminate = false
@@ -103,7 +111,7 @@ export default class Node {
     const allCheckedNodes = this._beforeChecked(_checkedNodes)
     console.log(allCheckedNodes)
 
-    const checkedNodes = allCheckedNodes.sort((a, b) => b.level - a.level) // 节点排序：节点最深的排在最前面
+    const checkedNodes = allCheckedNodes.sort((a, b) => b.level - a.level) // 节点排序：level值由大到小 节点最深的排在最前面
     console.log(checkedNodes)
     for (let i = 0, l = checkedNodes.length; i < l; i++) {
       const node = checkedNodes[i]
@@ -113,6 +121,36 @@ export default class Node {
       }
       const { half, all } = getChildState(node[childrenKey] || [])
       console.log({ half, all, name: node.name, id: node.id })
+      node.checked = all
+      node.indeterminate = half
+    }
+  }
+
+  _setChildrenCheck(nodes, checked) {
+    const { childrenKey } = this.setting
+    for (let i = 0, l = nodes.length; i < l; i++) {
+      const node = nodes[i]
+      node.checked = checked
+      checked ? (node.indeterminate = false) : ''
+      if (hasChildren(node, this.setting)) {
+        this._setChildrenCheck(node[childrenKey], checked)
+      }
+    }
+  }
+  _setHalfCheck(nodes, checked) {
+    const { childrenKey } = this.setting
+    console.log(nodes, checked)
+    const sortNodes = nodes.sort((a, b) => b.level - a.level) // 子节点在前
+    for (let i = 0, l = sortNodes.length; i < l; i++) {
+      const node = sortNodes[i]
+      node.checked = false
+      node.indeterminate = false
+    }
+    console.log('sortNodes', sortNodes)
+    for (let i = 0, l = sortNodes.length; i < l; i++) {
+      const node = sortNodes[i]
+      const { half, all, none } = getChildState(node[childrenKey])
+      console.log({ half, all, none, name: node.name, id: node.id })
       node.checked = all
       node.indeterminate = half
     }
@@ -131,5 +169,19 @@ export default class Node {
       parent = this.dataSet[parent[pIdKey]]
     }
     return result
+  }
+  _getCheckedNodes() {
+    return this.flattenData.filter((node) => node.checked)
+  }
+  _getCheckedKeys() {
+    const { idKey } = this.setting
+    return this._getCheckedNodes().map((node) => (node || {})[idKey])
+  }
+  _getHalfCheckedKeys() {
+    const { idKey } = this.setting
+    return this._getHalfCheckedNodes().map((node) => (node || {})[idKey])
+  }
+  _getHalfCheckedNodes() {
+    return this.flattenData.filter((node) => node.indeterminate)
   }
 }
