@@ -9,7 +9,7 @@
       :value="node.checked"
       :indeterminate="node.indeterminate"
       :key="`${node[computeProps.idKey]}_${node.checked}`"
-      @change="handleCheck(node, $event)"
+      @change="(...args) => handleCheck(node, ...args)"
     />
     <div class="node" @click="expandNode(node)">
       <div class="van-cell__title">
@@ -49,8 +49,8 @@ export default {
     }
   },
   methods: {
-    handleCheck(node, checked) {
-      this.$emit('handleCheck', node, checked)
+    handleCheck(node, checked, event) {
+      this.$emit('handleCheck', node, checked, event)
     },
     expandNode(node) {
       this.$emit('expandNode', node)

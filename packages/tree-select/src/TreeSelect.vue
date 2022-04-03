@@ -21,7 +21,7 @@
         :key="`${item[computeProps.idKey]}_${item.checked}`"
         :node="item"
         :computeProps="computeProps"
-        @handleCheck="handleChange"
+        @handleCheck="handleCheck"
         @expandNode="expandNode"
       />
     </template>
@@ -100,7 +100,7 @@ export default {
       this.cloneData = tab[childrenKey]
       this.tabs.splice(index + 1) // 移除点击tab 后面的所有tab
     },
-    handleChange(node, checked) {
+    handleCheck(node, checked) {
       console.log(arguments, checked)
       const { childrenKey } = this.computeProps
       node.checked = checked

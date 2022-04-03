@@ -33,8 +33,9 @@ export default class Node {
   }
 
   setDataSet() {
+    const { idKey } = this.setting
     this.flattenData.forEach((node) => {
-      this.dataSet[node[this.setting.idKey]] = node
+      this.dataSet[node[idKey]] = node
     })
   }
   // updateLeafState
@@ -45,6 +46,7 @@ export default class Node {
       node.level = 0
       node.rootId = null
       node.pIds = []
+      node.childNodes = []
       node.checked = false
       node.indeterminate = false
     })
@@ -71,6 +73,7 @@ export default class Node {
         // }
         let p = node.parent
         while (p) {
+          p.childNodes.push(node[idKey])
           node.rootId = p[idKey]
           node.level += 1
           node.pIds.push(p[idKey])
@@ -80,6 +83,19 @@ export default class Node {
     }
   }
 
+  _getFullPath(keys) {
+    const result = []
+    for (let i = 0, l = keys.length; i < l; i++) {
+      const key = keys[i]
+      const node = this.dataSet[key]
+      result.push(...node.childNodes)
+      result.push(...node.pIds)
+    }
+    console.log(result)
+    return [...new Set(result.concat(keys))]
+  }
+
+  // TODO 1. 只输入父级节点，勾选失败
   _beforeChecked(nodes) {
     const { idKey } = this.setting
     const stack = [...nodes]
@@ -103,15 +119,15 @@ export default class Node {
     const { childrenKey } = this.setting
     // TODO 设置勾选节点的 key数组必须包含父子节点
     const _checkedNodes = [] // 根据勾选节点的 key数组，获取对应的nodes节点
-    keys.forEach((key) => {
+    const fullPathKeys = this._getFullPath(keys)
+    fullPathKeys.forEach((key) => {
       const node = this.dataSet[key]
       node && _checkedNodes.push(node)
     })
 
-    const allCheckedNodes = this._beforeChecked(_checkedNodes)
-    console.log(allCheckedNodes)
+    console.log(_checkedNodes, fullPathKeys)
 
-    const checkedNodes = allCheckedNodes.sort((a, b) => b.level - a.level) // 节点排序：level值由大到小 节点最深的排在最前面
+    const checkedNodes = _checkedNodes.sort((a, b) => b.level - a.level) // 节点排序：level值由大到小 节点最深的排在最前面
     console.log(checkedNodes)
     for (let i = 0, l = checkedNodes.length; i < l; i++) {
       const node = checkedNodes[i]
