@@ -18,7 +18,7 @@
     </div>
     <template v-for="item in cloneData">
       <TreeNode
-        :key="`${item[computeProps.idKey]}_${item.checked}`"
+        :key="`${item[computeProps.idKey]}_${item.code}`"
         :node="item"
         :computeProps="computeProps"
         @handleCheck="handleCheck"
@@ -45,6 +45,7 @@ export default {
         return {}
       },
     },
+    name: String,
   },
   computed: {
     computeProps() {
@@ -57,7 +58,7 @@ export default {
       sourceData: [],
       cloneData: [],
       flattenData: [],
-      dataSet: {},
+      nodesMap: {},
       tabs: [],
       active: 'root',
     }
@@ -72,16 +73,16 @@ export default {
         props: this.computeProps,
         data,
       })
-      const { sourceData, cloneData, flattenData, dataSet } = this.store
+      const { sourceData, cloneData, flattenData, nodesMap } = this.store
       this.sourceData = sourceData
       this.cloneData = cloneData
       this.flattenData = flattenData
-      this.dataSet = dataSet
+      this.nodesMap = nodesMap
       console.timeEnd('init')
       this.tabs = [
         {
           id: 'root',
-          [label]: '首页',
+          [label]: this.name || '首页',
           [childrenKey]: this.cloneData,
         },
       ]

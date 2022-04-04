@@ -23,8 +23,8 @@ export default class Node {
     this.sourceData = data
     this.cloneData = deepCopy(data)
     this.flattenData = flattenTree(this.cloneData, props)
-    this.dataSet = {}
-    this.setDataSet()
+    this.nodesMap = new Map()
+    this.setNodesMap()
     this.updateState(this.flattenData)
     this.setParent(this.flattenData)
     console.time('setLevel')
@@ -32,10 +32,10 @@ export default class Node {
     console.timeEnd('setLevel')
   }
 
-  setDataSet() {
+  setNodesMap() {
     const { idKey } = this.setting
     this.flattenData.forEach((node) => {
-      this.dataSet[node[idKey]] = node
+      this.nodesMap.set(node[idKey], node)
     })
   }
   // updateLeafState
@@ -56,7 +56,7 @@ export default class Node {
     for (let i = 0, l = nodes.length; i < l; i++) {
       const node = nodes[i]
       if (node[pIdKey]) {
-        node.parent = this.dataSet[node[pIdKey]]
+        node.parent = this.nodesMap.get(node[pIdKey])
       }
     }
   }
@@ -66,9 +66,9 @@ export default class Node {
       const node = nodes[i]
       node.level = 1
       if (node.parent) {
-        // let p = this.dataSet[node[pIdKey]]
+        // let p = this.nodesMap.get(node[pIdKey])
         // while (p) {
-        //   p = this.dataSet[p[pIdKey]]
+        //   p = this.nodesMap.get(p[pIdKey])
         //   node.level += 1
         // }
         let p = node.parent
@@ -87,7 +87,7 @@ export default class Node {
     const result = []
     for (let i = 0, l = keys.length; i < l; i++) {
       const key = keys[i]
-      const node = this.dataSet[key]
+      const node = this.nodesMap.get(key)
       result.push(...node.childNodes)
       result.push(...node.pIds)
     }
@@ -121,7 +121,7 @@ export default class Node {
     const _checkedNodes = [] // 根据勾选节点的 key数组，获取对应的nodes节点
     const fullPathKeys = this._getFullPath(keys)
     fullPathKeys.forEach((key) => {
-      const node = this.dataSet[key]
+      const node = this.nodesMap.get(key)
       node && _checkedNodes.push(node)
     })
 
@@ -178,11 +178,11 @@ export default class Node {
 
   _getParentNodes(node, setting = {}) {
     const { pIdKey } = setting
-    let parent = this.dataSet[node[pIdKey]]
+    let parent = this.nodesMap.get(node[pIdKey])
     const result = []
     while (parent) {
       result.push(parent)
-      parent = this.dataSet[parent[pIdKey]]
+      parent = this.nodesMap.get(parent[pIdKey])
     }
     return result
   }
