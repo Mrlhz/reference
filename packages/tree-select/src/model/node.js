@@ -200,4 +200,12 @@ export default class Node {
   _getHalfCheckedNodes() {
     return this.flattenData.filter((node) => node.indeterminate)
   }
+  _getNodePath(id) {
+    if (typeof id !== 'string') return []
+    const node = this.nodesMap.get(id)
+    if (!node) return []
+    const path = []
+    node.pIds.forEach((pId) => path.push(this.nodesMap.get(pId)))
+    return path.concat(node).sort((a, b) => a.level - b.level)
+  }
 }
