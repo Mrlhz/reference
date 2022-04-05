@@ -205,7 +205,13 @@ export default class Node {
     const node = this.nodesMap.get(id)
     if (!node) return []
     const path = []
-    node.pIds.forEach((pId) => path.push(this.nodesMap.get(pId)))
-    return path.concat(node).sort((a, b) => a.level - b.level)
+    // node.pIds.forEach((pId) => path.push(this.nodesMap.get(pId)))
+    // return path.concat(node).sort((a, b) => a.level - b.level)
+    let parent = node.parent
+    while (parent) {
+      path.unshift(parent)
+      parent = parent.parent
+    }
+    return path.concat(node)
   }
 }
