@@ -31,6 +31,7 @@
 import TreeNode from './TreeNode.vue'
 import Node from './model/node'
 import { hasChildren, defaultProps } from './model/node'
+import { getChildState } from '@/utils/flattenTree'
 
 export default {
   name: 'TreeSelect',
@@ -111,8 +112,19 @@ export default {
       if (hasChildren(node, this.computeProps)) {
         this.store._setChildrenCheck(node[childrenKey], checked)
       }
-      const nodes = this.getParentNodes(node, this.computeProps)
-      this.store._setHalfCheck(nodes, checked)
+      // 方法1
+      // const nodes = this.getParentNodes(node, this.computeProps)
+      // this.store._setHalfCheck(nodes, checked)
+
+      // 方法2
+      let p = node.parent
+      while (p) {
+        const { half, all } = getChildState(p[childrenKey])
+        console.log({ half, all, name: p.name, id: p.id })
+        p.checked = all
+        p.indeterminate = half
+        p = p.parent
+      }
     },
     _setHalfCheck(nodes, checked) {
       const { childrenKey } = this.computeProps

@@ -45,10 +45,11 @@ export default class Node {
       node.isLeaf = !hasChildren(node, this.setting)
       node.level = 0
       node.rootId = null
-      node.pIds = []
-      node.childNodes = []
+      node.pIds = new Set()
+      node.childNodes = new Set()
       node.checked = false
       node.indeterminate = false
+      node.visible = true
     })
   }
   setParent(nodes = []) {
@@ -73,10 +74,10 @@ export default class Node {
         // }
         let p = node.parent
         while (p) {
-          p.childNodes.push(node[idKey])
+          p.childNodes.add(node[idKey])
           node.rootId = p[idKey]
           node.level += 1
-          node.pIds.push(p[idKey])
+          node.pIds.add(p[idKey])
           p = p.parent
         }
       }
@@ -88,8 +89,10 @@ export default class Node {
     for (let i = 0, l = keys.length; i < l; i++) {
       const key = keys[i]
       const node = this.nodesMap.get(key)
-      result.push(...node.childNodes)
-      result.push(...node.pIds)
+      if (node) {
+        result.push(...Array.from(node.childNodes))
+        result.push(...Array.from(node.pIds))
+      }
     }
     console.log(result)
     return [...new Set(result.concat(keys))]
@@ -178,11 +181,11 @@ export default class Node {
 
   _getParentNodes(node, setting = {}) {
     const { pIdKey } = setting
-    let parent = this.nodesMap.get(node[pIdKey])
+    let parent = this.nodesMap.get(node[pIdKey]) || node.parent
     const result = []
     while (parent) {
       result.push(parent)
-      parent = this.nodesMap.get(parent[pIdKey])
+      parent = this.nodesMap.get(parent[pIdKey]) || parent.parent
     }
     return result
   }
@@ -200,6 +203,7 @@ export default class Node {
   _getHalfCheckedNodes() {
     return this.flattenData.filter((node) => node.indeterminate)
   }
+  // 获取节点全路径集合
   _getNodePath(id) {
     if (typeof id !== 'string') return []
     const node = this.nodesMap.get(id)
@@ -213,5 +217,39 @@ export default class Node {
       parent = parent.parent
     }
     return path.concat(node)
+  }
+  // 通过关键字过滤树节点
+  _filter(value) {
+    if (!value) {
+      this._resetFilter()
+      return
+    }
+    const { label, childrenKey } = this.setting
+    const traverse = (nodes) => {
+      for (let i = 0, l = nodes.length; i < l; i++) {
+        const node = nodes[i]
+        node.visible = false
+        if (node[label].includes(value)) {
+          node.visible = true
+          let p = node.parent
+          while (p) {
+            p.visible = true
+            p = p.parent
+          }
+          continue
+        }
+        if (hasChildren(node, this.setting)) {
+          traverse(node[childrenKey])
+        }
+      }
+    }
+
+    traverse(this.cloneData)
+  }
+  _resetFilter() {
+    for (let i = 0, l = this.flattenData.length; i < l; i++) {
+      const node = this.flattenData[i]
+      node.visible = true
+    }
   }
 }
