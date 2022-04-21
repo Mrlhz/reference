@@ -8,6 +8,7 @@ class Strategy {
   perform(name, fn) {
     this.strategyMap[name] = fn
   }
+  // invok
   context(type, ...rest) {
     const fn = this.strategyMap[type]
     if (typeof fn !== 'function') return
