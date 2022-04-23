@@ -1,4 +1,7 @@
 
+### Vue
+
+- [VUE学习----父子元素点击事件冲突](https://www.jianshu.com/p/bb06a9d2ac77)
 
 ### 移动端开发
 

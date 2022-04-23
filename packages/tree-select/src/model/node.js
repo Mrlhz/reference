@@ -1,9 +1,11 @@
 import { flattenTree, getChildState } from '@/utils/flattenTree'
 import deepCopy from '@/utils/deepClone'
 
-export const hasChildren = (node = {}, { childrenKey } = {}) => {
+export const hasChildren = (node = {}, { childrenKey = 'children' } = {}) => {
   return Array.isArray(node[childrenKey]) && node[childrenKey].length
 }
+
+export const unique = (array = []) => Array.from(new Set(array)) // 数组去重
 
 export const defaultProps = {
   idKey: 'id',
@@ -18,8 +20,8 @@ export const defaultProps = {
  */
 export default class Node {
   constructor(options) {
-    const { props = defaultProps, data } = options
-    this.setting = props
+    const { props, data } = options
+    this.setting = Object.assign({}, defaultProps, props || {})
     this.sourceData = data
     this.cloneData = deepCopy(data)
     this.flattenData = flattenTree(this.cloneData, props)
@@ -43,9 +45,9 @@ export default class Node {
   updateState(nodes = []) {
     nodes.forEach((node) => {
       node.isLeaf = !hasChildren(node, this.setting)
-      node.level = 0
+      node.level = 0 // 节点的层次
       node.rootId = null
-      node.pIds = new Set()
+      node.pIds = new Set() // 节点的祖先：从根到该节点所经分支上的所有节点
       node.childNodes = new Set()
       node.checked = false
       node.indeterminate = false
@@ -95,23 +97,7 @@ export default class Node {
       }
     }
     console.log(result)
-    return [...new Set(result.concat(keys))]
-  }
-
-  // TODO 1. 只输入父级节点，勾选失败
-  _beforeChecked(nodes) {
-    const { idKey } = this.setting
-    const stack = [...nodes]
-    while (stack.length) {
-      const next = stack.shift()
-      const parent = next.parent
-      const hasParent = (p) => nodes.find((node) => node[idKey] === p[idKey])
-      if (parent && !hasParent(parent)) {
-        stack.push(parent)
-        nodes.push(parent)
-      }
-    }
-    return nodes
+    return unique(result.concat(keys))
   }
 
   _setCheckedKeys(keys = []) {
@@ -122,7 +108,7 @@ export default class Node {
     const { childrenKey } = this.setting
     // TODO 设置勾选节点的 key数组必须包含父子节点
     const _checkedNodes = [] // 根据勾选节点的 key数组，获取对应的nodes节点
-    const fullPathKeys = this._getFullPath(keys)
+    const fullPathKeys = this._getFullPath(keys) // 设置勾选节点的全路径节点
     fullPathKeys.forEach((key) => {
       const node = this.nodesMap.get(key)
       node && _checkedNodes.push(node)
@@ -220,6 +206,7 @@ export default class Node {
   }
   // 通过关键字过滤树节点
   _filter(value) {
+    console.time('filter')
     if (!value) {
       this._resetFilter()
       return
@@ -245,6 +232,7 @@ export default class Node {
     }
 
     traverse(this.cloneData)
+    console.timeEnd('filter')
   }
   _resetFilter() {
     for (let i = 0, l = this.flattenData.length; i < l; i++) {

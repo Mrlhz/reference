@@ -16,9 +16,11 @@
         <i class="van-icon van-icon-arrow van-cell__right-icon separator"></i>
       </div>
     </div>
-    <template v-for="item in cloneData">
+    <template>
       <TreeNode
+        v-for="item in cloneData"
         :key="`${item[computeProps.idKey]}_${item.code}`"
+        v-show="item.visible"
         :node="item"
         :computeProps="computeProps"
         @handleCheck="handleCheck"
@@ -124,26 +126,6 @@ export default {
         p.checked = all
         p.indeterminate = half
         p = p.parent
-      }
-    },
-    _setHalfCheck(nodes, checked) {
-      const { childrenKey } = this.computeProps
-      for (let i = 0, l = nodes.length; i < l; i++) {
-        const node = nodes[i]
-        console.log({ ...node })
-        const checkedAll = node[childrenKey].every((children) => {
-          return children.checked
-        })
-        if (checked && checkedAll) {
-          this.$set(node, 'checked', checked)
-          this.$set(node, 'indeterminate', false)
-          continue
-        }
-        const hasChecked = node[childrenKey].some((children) => {
-          return children.checked || children.indeterminate
-        })
-        this.$set(node, 'checked', false)
-        this.$set(node, 'indeterminate', hasChecked)
       }
     },
     getParentNodes(node, setting = {}) {
